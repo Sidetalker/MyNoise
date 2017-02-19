@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,32 +22,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81k-OF-s4f">
-                                <rect key="frame" x="170" y="318" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubx-7L-ASL"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-m4-H6V">
-                                <rect key="frame" x="14" y="388" width="347" height="31"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hp3-1W-M3l"/>
-                                </connections>
-                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUd-Pj-xE4" customClass="PlayPauseButton" customModule="NoiseUI">
+                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Kx7-p9-icZ"/>
+                                    <constraint firstAttribute="width" secondItem="sUd-Pj-xE4" secondAttribute="height" multiplier="1:1" id="WXJ-1G-8ta"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="pause"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="81k-OF-s4f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4D-Sk-eQB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vwU-m4-H6V" secondAttribute="trailing" id="SQv-y2-FGd"/>
-                            <constraint firstItem="vwU-m4-H6V" firstAttribute="top" secondItem="81k-OF-s4f" secondAttribute="bottom" constant="40" id="ULj-3t-RQ4"/>
-                            <constraint firstItem="81k-OF-s4f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zfk-5S-jIf"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="vwU-m4-H6V" secondAttribute="leading" id="dOf-PX-dsh"/>
+                            <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S1d-Sh-3nJ"/>
+                            <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yZW-2i-TIS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="slider" destination="vwU-m4-H6V" id="9N9-Nz-elE"/>
-                        <outlet property="startButton" destination="81k-OF-s4f" id="T9G-PD-pWb"/>
+                        <outlet property="playButton" destination="sUd-Pj-xE4" id="TS4-f1-oim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

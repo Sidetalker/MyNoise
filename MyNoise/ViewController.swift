@@ -7,32 +7,26 @@
 //
 
 import UIKit
-import AudioToolbox
+import NoiseUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PlayPauseButtonDelegate {
     
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var slider: UISlider!
-    
-    var brownUnit: AudioComponentInstance? = nil
-    
-    var offset = 0
-    
-    var isPlaying = false {
+    @IBOutlet weak var playButton: PlayPauseButton! {
         didSet {
-            startButton.setTitle(isPlaying ? "Stop" : "Start", for: .normal)
+            playButton.delegate = self
         }
     }
+    
+    /// True if noise is currently playing
+    var isPlaying = false
+    
+    override var prefersStatusBarHidden: Bool { return true }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func sliderValueChanged(_ sender: Any) {
-        offset = Int(slider.value)
-    }
-    
-    @IBAction func startTapped(_ sender: Any) {
+    func playPauseButton(_ button: PlayPauseButton, willChangeState state: PlayPauseButtonState) {
         isPlaying = !isPlaying
         
         if isPlaying {

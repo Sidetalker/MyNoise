@@ -48,6 +48,16 @@
                ReferencedContainer = "container:MyNoise.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0A59D5941E5A22D700404B2C"
+               BuildableName = "NoiseUITests.xctest"
+               BlueprintName = "NoiseUITests"
+               ReferencedContainer = "container:MyNoise.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
