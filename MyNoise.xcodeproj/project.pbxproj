@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */; };
+		0ADF3F3E1E58C18200143B8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3D1E58C18200143B8C /* ViewController.swift */; };
+		0ADF3F411E58C18200143B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3F1E58C18200143B8C /* Main.storyboard */; };
+		0ADF3F431E58C18200143B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F421E58C18200143B8C /* Assets.xcassets */; };
+		0ADF3F461E58C18200143B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F441E58C18200143B8C /* LaunchScreen.storyboard */; };
+		0ADF3F511E58C18200143B8C /* MyNoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F501E58C18200143B8C /* MyNoiseTests.swift */; };
+		0ADF3F5C1E58C18200143B8C /* MyNoiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F5B1E58C18200143B8C /* MyNoiseUITests.swift */; };
+		0ADF3F701E58E14300143B8C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADF3F6F1E58E14300143B8C /* AudioToolbox.framework */; };
+		0ADF3F721E591F1F00143B8C /* Noise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F711E591F1F00143B8C /* Noise.swift */; };
+		0ADF3F741E592C1D00143B8C /* Generators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F731E592C1D00143B8C /* Generators.swift */; };
+		0ADF3F781E5950FA00143B8C /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F771E5950FA00143B8C /* Emoji.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0ADF3F4D1E58C18200143B8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ADF3F301E58C18200143B8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ADF3F371E58C18200143B8C;
+			remoteInfo = MyNoise;
+		};
+		0ADF3F581E58C18200143B8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ADF3F301E58C18200143B8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ADF3F371E58C18200143B8C;
+			remoteInfo = MyNoise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0ADF3F6C1E58C82C00143B8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0ADF3F381E58C18200143B8C /* MyNoise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNoise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0ADF3F3D1E58C18200143B8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0ADF3F401E58C18200143B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0ADF3F421E58C18200143B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0ADF3F451E58C18200143B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0ADF3F471E58C18200143B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ADF3F4C1E58C18200143B8C /* MyNoiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNoiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADF3F501E58C18200143B8C /* MyNoiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNoiseTests.swift; sourceTree = "<group>"; };
+		0ADF3F521E58C18200143B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ADF3F571E58C18200143B8C /* MyNoiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNoiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADF3F5B1E58C18200143B8C /* MyNoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNoiseUITests.swift; sourceTree = "<group>"; };
+		0ADF3F5D1E58C18200143B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ADF3F6F1E58E14300143B8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0ADF3F711E591F1F00143B8C /* Noise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noise.swift; sourceTree = "<group>"; };
+		0ADF3F731E592C1D00143B8C /* Generators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generators.swift; sourceTree = "<group>"; };
+		0ADF3F771E5950FA00143B8C /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0ADF3F351E58C18200143B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADF3F701E58E14300143B8C /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADF3F491E58C18200143B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADF3F541E58C18200143B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ADF3F2F1E58C18200143B8C = {
+			isa = PBXGroup;
+			children = (
+				0ADF3F6E1E58C86500143B8C /* Frameworks */,
+				0ADF3F3A1E58C18200143B8C /* MyNoise */,
+				0ADF3F4F1E58C18200143B8C /* MyNoiseTests */,
+				0ADF3F5A1E58C18200143B8C /* MyNoiseUITests */,
+				0ADF3F391E58C18200143B8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0ADF3F391E58C18200143B8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF3F381E58C18200143B8C /* MyNoise.app */,
+				0ADF3F4C1E58C18200143B8C /* MyNoiseTests.xctest */,
+				0ADF3F571E58C18200143B8C /* MyNoiseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0ADF3F3A1E58C18200143B8C /* MyNoise */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */,
+				0ADF3F3D1E58C18200143B8C /* ViewController.swift */,
+				0ADF3F711E591F1F00143B8C /* Noise.swift */,
+				0ADF3F771E5950FA00143B8C /* Emoji.swift */,
+				0ADF3F731E592C1D00143B8C /* Generators.swift */,
+				0ADF3F3F1E58C18200143B8C /* Main.storyboard */,
+				0ADF3F421E58C18200143B8C /* Assets.xcassets */,
+				0ADF3F441E58C18200143B8C /* LaunchScreen.storyboard */,
+				0ADF3F471E58C18200143B8C /* Info.plist */,
+			);
+			path = MyNoise;
+			sourceTree = "<group>";
+		};
+		0ADF3F4F1E58C18200143B8C /* MyNoiseTests */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF3F501E58C18200143B8C /* MyNoiseTests.swift */,
+				0ADF3F521E58C18200143B8C /* Info.plist */,
+			);
+			path = MyNoiseTests;
+			sourceTree = "<group>";
+		};
+		0ADF3F5A1E58C18200143B8C /* MyNoiseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF3F5B1E58C18200143B8C /* MyNoiseUITests.swift */,
+				0ADF3F5D1E58C18200143B8C /* Info.plist */,
+			);
+			path = MyNoiseUITests;
+			sourceTree = "<group>";
+		};
+		0ADF3F6E1E58C86500143B8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF3F6F1E58E14300143B8C /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0ADF3F371E58C18200143B8C /* MyNoise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ADF3F601E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoise" */;
+			buildPhases = (
+				0ADF3F341E58C18200143B8C /* Sources */,
+				0ADF3F351E58C18200143B8C /* Frameworks */,
+				0ADF3F361E58C18200143B8C /* Resources */,
+				0ADF3F6C1E58C82C00143B8C /* Embed Frameworks */,
+				0ADF3F6D1E58C83A00143B8C /* Copy Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyNoise;
+			productName = MyNoise;
+			productReference = 0ADF3F381E58C18200143B8C /* MyNoise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0ADF3F4B1E58C18200143B8C /* MyNoiseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ADF3F631E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoiseTests" */;
+			buildPhases = (
+				0ADF3F481E58C18200143B8C /* Sources */,
+				0ADF3F491E58C18200143B8C /* Frameworks */,
+				0ADF3F4A1E58C18200143B8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ADF3F4E1E58C18200143B8C /* PBXTargetDependency */,
+			);
+			name = MyNoiseTests;
+			productName = MyNoiseTests;
+			productReference = 0ADF3F4C1E58C18200143B8C /* MyNoiseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0ADF3F561E58C18200143B8C /* MyNoiseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ADF3F661E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoiseUITests" */;
+			buildPhases = (
+				0ADF3F531E58C18200143B8C /* Sources */,
+				0ADF3F541E58C18200143B8C /* Frameworks */,
+				0ADF3F551E58C18200143B8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ADF3F591E58C18200143B8C /* PBXTargetDependency */,
+			);
+			name = MyNoiseUITests;
+			productName = MyNoiseUITests;
+			productReference = 0ADF3F571E58C18200143B8C /* MyNoiseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0ADF3F301E58C18200143B8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Kevin Sullivan";
+				TargetAttributes = {
+					0ADF3F371E58C18200143B8C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = S7BT87895F;
+						ProvisioningStyle = Automatic;
+					};
+					0ADF3F4B1E58C18200143B8C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ENK6LV73Q6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0ADF3F371E58C18200143B8C;
+					};
+					0ADF3F561E58C18200143B8C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ENK6LV73Q6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0ADF3F371E58C18200143B8C;
+					};
+				};
+			};
+			buildConfigurationList = 0ADF3F331E58C18200143B8C /* Build configuration list for PBXProject "MyNoise" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0ADF3F2F1E58C18200143B8C;
+			productRefGroup = 0ADF3F391E58C18200143B8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0ADF3F371E58C18200143B8C /* MyNoise */,
+				0ADF3F4B1E58C18200143B8C /* MyNoiseTests */,
+				0ADF3F561E58C18200143B8C /* MyNoiseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ADF3F361E58C18200143B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADF3F461E58C18200143B8C /* LaunchScreen.storyboard in Resources */,
+				0ADF3F431E58C18200143B8C /* Assets.xcassets in Resources */,
+				0ADF3F411E58C18200143B8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADF3F4A1E58C18200143B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADF3F551E58C18200143B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ADF3F6D1E58C83A00143B8C /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0ADF3F341E58C18200143B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADF3F781E5950FA00143B8C /* Emoji.swift in Sources */,
+				0ADF3F3E1E58C18200143B8C /* ViewController.swift in Sources */,
+				0ADF3F741E592C1D00143B8C /* Generators.swift in Sources */,
+				0ADF3F721E591F1F00143B8C /* Noise.swift in Sources */,
+				0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADF3F481E58C18200143B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADF3F511E58C18200143B8C /* MyNoiseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADF3F531E58C18200143B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADF3F5C1E58C18200143B8C /* MyNoiseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0ADF3F4E1E58C18200143B8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ADF3F371E58C18200143B8C /* MyNoise */;
+			targetProxy = 0ADF3F4D1E58C18200143B8C /* PBXContainerItemProxy */;
+		};
+		0ADF3F591E58C18200143B8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ADF3F371E58C18200143B8C /* MyNoise */;
+			targetProxy = 0ADF3F581E58C18200143B8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0ADF3F3F1E58C18200143B8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0ADF3F401E58C18200143B8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0ADF3F441E58C18200143B8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0ADF3F451E58C18200143B8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0ADF3F5E1E58C18200143B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0ADF3F5F1E58C18200143B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0ADF3F611E58C18200143B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S7BT87895F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = MyNoise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0ADF3F621E58C18200143B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S7BT87895F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = MyNoise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		0ADF3F641E58C18200143B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ENK6LV73Q6;
+				INFOPLIST_FILE = MyNoiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNoise.app/MyNoise";
+			};
+			name = Debug;
+		};
+		0ADF3F651E58C18200143B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ENK6LV73Q6;
+				INFOPLIST_FILE = MyNoiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNoise.app/MyNoise";
+			};
+			name = Release;
+		};
+		0ADF3F671E58C18200143B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ENK6LV73Q6;
+				INFOPLIST_FILE = MyNoiseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MyNoise;
+			};
+			name = Debug;
+		};
+		0ADF3F681E58C18200143B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ENK6LV73Q6;
+				INFOPLIST_FILE = MyNoiseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MyNoise;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ADF3F331E58C18200143B8C /* Build configuration list for PBXProject "MyNoise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ADF3F5E1E58C18200143B8C /* Debug */,
+				0ADF3F5F1E58C18200143B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ADF3F601E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ADF3F611E58C18200143B8C /* Debug */,
+				0ADF3F621E58C18200143B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0ADF3F631E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoiseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ADF3F641E58C18200143B8C /* Debug */,
+				0ADF3F651E58C18200143B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0ADF3F661E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoiseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ADF3F671E58C18200143B8C /* Debug */,
+				0ADF3F681E58C18200143B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0ADF3F301E58C18200143B8C /* Project object */;
+}
