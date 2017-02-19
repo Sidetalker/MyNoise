@@ -12,14 +12,18 @@ import Foundation
 public typealias NoisePoints = [Float]
 
 /**
- Generates brown noise from white noise by roughly approximating its integral
- using the `Noise` singleton to maintain a feedback buffer (💩)
+ Generates brown noise from white noise using a random walk approximation to fractional
+ Brownian motion where the increments of the fractional random walk are defined as a
+ weighted sum of the past increments of the white noise random walk
+ The weighted sum (💩) is maintained by the `Noise` singleton
  
+ - note: [Research Paper](https://arxiv.org/pdf/0708.1905.pdf)
  - parameter white: The white noise `Float`
  */
 fileprivate func getBrownNoise(from white: Float) -> Float {
     💩 += white
     
+    // Wrap around upper and lower bounds
     if 💩 < -🚫 {
         💩 = -🚫 - (💩 + 🚫)
     } else if 💩 > 🚫 {
@@ -30,7 +34,7 @@ fileprivate func getBrownNoise(from white: Float) -> Float {
 }
 
 /**
- Generates brown noise points using the Box-Muller transform
+ Generates brown noise points by approximating Brownian motion from white noise
  
  - parameter count: The number of points to be returned
  */

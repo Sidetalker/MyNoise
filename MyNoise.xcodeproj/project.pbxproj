@@ -578,6 +578,7 @@
 				0ADF3F621E58C18200143B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ADF3F631E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoiseTests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +587,7 @@
 				0ADF3F651E58C18200143B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ADF3F661E58C18200143B8C /* Build configuration list for PBXNativeTarget "MyNoiseUITests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +596,7 @@
 				0ADF3F681E58C18200143B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
