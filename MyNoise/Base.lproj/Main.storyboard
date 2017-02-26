@@ -30,13 +30,14 @@
                                     <constraint firstAttribute="width" secondItem="sUd-Pj-xE4" secondAttribute="height" multiplier="1:1" id="WXJ-1G-8ta"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="pause"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="play"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S1d-Sh-3nJ"/>
                             <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yZW-2i-TIS"/>

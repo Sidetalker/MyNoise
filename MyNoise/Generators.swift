@@ -6,7 +6,7 @@
 //  Copyright © 2017 Kevin Sullivan. All rights reserved.
 //
 
-import Foundation
+import Darwin
 
 /// Just an array of Floats, cause typealiases are _cool_
 public typealias NoisePoints = [Float]
@@ -62,8 +62,8 @@ public func generateWhiteNoise(count: Int) -> NoisePoints {
         let b = drand48()
         
         // Box-Muller transform
-        let x = sqrt(-2 * log(a)) * sin(2 * M_PI * b)
-        let y = sqrt(-2 * log(a)) * cos(2 * M_PI * b)
+        let x = sqrt(-2 * Darwin.log(a)) * sin(2 * M_PI * b)
+        let y = sqrt(-2 * Darwin.log(a)) * cos(2 * M_PI * b)
         
         whiteNoise.append(Float(x))
         whiteNoise.append(Float(y))

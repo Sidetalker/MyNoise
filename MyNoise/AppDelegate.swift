@@ -7,16 +7,48 @@
 //
 
 import UIKit
+import AVFoundation
+import SwiftyBeaver
+
+/// SwiftyBeaver logger, see `AppDelegate.configureLogging()` for configuration
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        configureAudio()
+        configureLogging()
         return true
+    }
+    
+    /// Set up SwiftBeaver
+    func configureLogging() {
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        
+        console.minLevel = .debug
+        file.format = "$J" // JSON output
+        file.minLevel = .verbose
+        
+        log.addDestination(console)
+        log.addDestination(file)
+    }
+    
+    /// Configure app for background audio
+    func configureAudio() {
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        } catch let error {
+            log.error("Unable to set up app for background audio playback: \(error)")
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(Noise.handleInterruption), name: .AVAudioSessionInterruption, object: nil)
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        Noise.shared.becomeFirstResponder()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -25,8 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

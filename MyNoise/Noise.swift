@@ -8,6 +8,7 @@
 
 import Foundation
 import AudioToolbox
+import Chameleon
 
 public enum NoiseType {
     case white, brown
@@ -22,17 +23,25 @@ public enum NoiseType {
     }
 }
 
+protocol NoiseDelegate {
+    func noiseDidStart()
+    func noiseDidStop()
+    func noiseInterrupted()
+}
+
 /// Singleton used to manage noise rendering
-class Noise {
+class Noise: UIResponder {
     /// Singleton accessor
     public static let shared = Noise()
     
     // Private initializer for singleton - perfect time to seed our random number generator
-    private init() { srand48(🔥) }
+    private override init() { srand48(🔥) }
     
     public var brownianFeedback: Float = 0
     public var brownianUpperBound: Float = 10
     public var brownianDamping: Float = 5
+    
+    public var delegate: NoiseDelegate?
     
     private var audioUnit: AudioComponentInstance? = nil
     
@@ -40,6 +49,8 @@ class Noise {
     private(set) var type: NoiseType = .brown
     
     public var isPlaying = false
+    
+    override var canBecomeFirstResponder: Bool { return true }
     
     /// Switches type of noise
     /// - parameter type: Desired noise type
@@ -51,38 +62,58 @@ class Noise {
         let result = Noise.shared.start()
         
         if result == noErr {
-            print("Started outputting noise successfully")
+            log.debug("Started outputting noise successfully")
         } else {
-            print("Failed to start outputting noise")
+            log.error("Failed to start outputting noise (\(result))")
         }
         
         return result
     
     }
     
+    /// Toggles the current state (stops if playing, starts if not playing)
+    public class func toggle() { return Noise.shared.toggle() }
+    
+    private func toggle() {
+        if isPlaying {
+            stop()
+        } else {
+            start()
+        }
+    }
+    
     /// Stops outputting noise
     public class func stop() { return Noise.shared.stop() }
     
-    private func start() -> OSStatus {
-        print("Preparing audio unit")
+    @discardableResult private func start() -> OSStatus {
+        log.debug("Preparing audio unit")
         
         var result = prepareAudio()
         
         guard let audioUnit = audioUnit, result == noErr else {
-            print("Error: failed to prepare audio unit (\(result))")
+            log.error("Failed to prepare audio unit (\(result))")
             return result
         }
         
-        print("Initializing audio unit")
+        log.debug("Initializing audio unit")
         
         result = AudioUnitInitialize(audioUnit)
         
         guard result == noErr else {
-            print("Error: failed to initialize audio unit (\(result))")
+            log.error("Failed to initialize audio unit (\(result))")
             return result
         }
         
-        return AudioOutputUnitStart(audioUnit)
+        result = AudioOutputUnitStart(audioUnit)
+        
+        guard result == noErr else {
+            log.error("Failed to start audio output (\(result))")
+            return result
+        }
+        
+        delegate?.noiseDidStart()
+        
+        return result
     }
 
     private func stop() {
@@ -90,11 +121,13 @@ class Noise {
             return
         }
         
-        print("Stopping audio")
+        log.debug("Stopping audio")
         
         AudioOutputUnitStop(audioUnit)
         AudioUnitUninitialize(audioUnit)
         AudioComponentInstanceDispose(audioUnit)
+        
+        delegate?.noiseDidStop()
     }
     
     /**
@@ -124,19 +157,19 @@ class Noise {
         defaultOutputDescription.componentFlags = 0
         defaultOutputDescription.componentFlagsMask = 0
         
-        print("Discovering output")
+        log.debug("Discovering output")
         
         guard let defaultOutput = AudioComponentFindNext(nil, &defaultOutputDescription) else {
-            print("Error: could not find default output")
+            log.error("Could not find default output")
             return kAudioUnitErr_InstrumentTypeNotFound
         }
         
-        print("Creating new component using default output")
+        log.debug("Creating new component using default output")
         
         var error = AudioComponentInstanceNew(defaultOutput, &audioUnit)
         
         guard error == noErr else {
-            print("Error: could not create brownUnit (\(error))")
+            log.error("Could not create brownUnit (\(error))")
             return error
         }
         
@@ -146,7 +179,7 @@ class Noise {
         input.inputProcRefCon = Unmanaged.passUnretained(self).toOpaque()
         let inputSize = uint(MemoryLayout.size(ofValue: input))
         
-        print("Configuring audio unit callback")
+        log.debug("Configuring audio unit callback")
         
         error = AudioUnitSetProperty(audioUnit!,
                                      kAudioUnitProperty_SetRenderCallback,
@@ -156,13 +189,13 @@ class Noise {
                                      inputSize)
         
         guard error == noErr else {
-            print("Error: could not configure callback (\(error))")
+            log.error("Could not configure callback (\(error))")
             return error
         }
         
         // Configure audio stream parameters
         var stream = AudioStreamBasicDescription()
-        stream.mSampleRate = 44100 // # samples / second
+        stream.mSampleRate = 20000 // # samples / second
         stream.mFormatID = kAudioFormatLinearPCM
         stream.mFormatFlags = kAudioFormatFlagsNativeFloatPacked | kAudioFormatFlagIsNonInterleaved
         stream.mBytesPerPacket = 4
@@ -172,7 +205,7 @@ class Noise {
         stream.mBitsPerChannel = 32
         let streamSize = uint(MemoryLayout.size(ofValue: stream))
         
-        print("Setting stream properties for audio unit")
+        log.debug("Setting stream properties for audio unit")
         
         error = AudioUnitSetProperty(audioUnit!,
                                      kAudioUnitProperty_StreamFormat,
@@ -182,13 +215,41 @@ class Noise {
                                      streamSize)
         
         guard error == noErr else {
-            print("Error: could not configure stream parameters (\(error))")
+            log.error("Could not configure stream parameters (\(error))")
             return error
         }
         
         return noErr
     }
+    
+    @objc class func handleInterruption() {
+        log.debug("Audio session interupted")
+        
+        Noise.shared.delegate?.noiseInterrupted()
+        
+        if Noise.shared.isPlaying {
+            log.debug("Stopping noise")
+            Noise.stop()
+        } else {
+            log.debug("Nothing playing, no action needed")
+        }
+    }
+    
+    override func remoteControlReceived(with event: UIEvent?) {
+        // We only care about remote control events
+        guard let event = event, event.type == .remoteControl else {
+            return
+        }
+        
+        switch event.subtype {
+        case .remoteControlTogglePlayPause:
+            toggle()
+        default: break
+        }
+    }
 }
+
+
 
 /// Renders noise based on `Noise` state
 public func renderNoise(inRefCon:UnsafeMutableRawPointer,
@@ -201,8 +262,8 @@ public func renderNoise(inRefCon:UnsafeMutableRawPointer,
     let audioListPointer = UnsafeMutableAudioBufferListPointer(ioData)
     audioListPointer?[0].mDataByteSize = inNumberFrames * uint(MemoryLayout<Float>.size)
     
-    let whiteNoise = Noise.generate(count: Int(inNumberFrames))
-    audioListPointer?[0].mData = UnsafeMutableRawPointer(mutating: whiteNoise)
+    let noise = Noise.generate(count: Int(inNumberFrames))
+    audioListPointer?[0].mData = UnsafeMutableRawPointer(mutating: noise)
     
     return noErr
 }

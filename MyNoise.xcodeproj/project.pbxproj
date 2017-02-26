@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A56213C1E5A3642005E3E92 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56213B1E5A3642005E3E92 /* Chameleon.framework */; };
+		0A56213D1E5A3642005E3E92 /* Chameleon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56213B1E5A3642005E3E92 /* Chameleon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0A56213F1E5A3647005E3E92 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */; };
+		0A5621401E5A3647005E3E92 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A59D5961E5A22D700404B2C /* NoiseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A59D58D1E5A22D700404B2C /* NoiseUI.framework */; };
 		0A59D59D1E5A22D700404B2C /* NoiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59D59C1E5A22D700404B2C /* NoiseUITests.swift */; };
 		0A59D59F1E5A22D700404B2C /* NoiseUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A59D58F1E5A22D700404B2C /* NoiseUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +77,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0A59D5A31E5A22D700404B2C /* NoiseUI.framework in Embed Frameworks */,
+				0A5621401E5A3647005E3E92 /* SwiftyBeaver.framework in Embed Frameworks */,
+				0A56213D1E5A3642005E3E92 /* Chameleon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +86,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A56213B1E5A3642005E3E92 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
+		0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayPauseButton.swift; path = ../MyNoise/PlayPauseButton.swift; sourceTree = "<group>"; };
 		0A59D5841E5A08B300404B2C /* NoisePaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoisePaint.swift; path = MyNoise/NoisePaint.swift; sourceTree = SOURCE_ROOT; };
 		0A59D5861E5A08D000404B2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -129,6 +137,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A59D5A21E5A22D700404B2C /* NoiseUI.framework in Frameworks */,
+				0A56213F1E5A3647005E3E92 /* SwiftyBeaver.framework in Frameworks */,
+				0A56213C1E5A3642005E3E92 /* Chameleon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +305,8 @@
 		0ADF3F6E1E58C86500143B8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */,
+				0A56213B1E5A3642005E3E92 /* Chameleon.framework */,
 				0A59D5861E5A08D000404B2C /* UIKit.framework */,
 				0ADF3F6F1E58E14300143B8C /* AudioToolbox.framework */,
 			);
@@ -519,6 +531,8 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyBeaver.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -894,6 +908,7 @@
 				0A59D5A61E5A22D700404B2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A59D5A71E5A22D700404B2C /* Build configuration list for PBXNativeTarget "NoiseUITests" */ = {
 			isa = XCConfigurationList;
@@ -902,6 +917,7 @@
 				0A59D5A91E5A22D700404B2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ADF3F331E58C18200143B8C /* Build configuration list for PBXProject "MyNoise" */ = {
 			isa = XCConfigurationList;
