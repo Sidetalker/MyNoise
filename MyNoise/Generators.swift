@@ -21,16 +21,16 @@ public typealias NoisePoints = [Float]
  - parameter white: The white noise `Float`
  */
 fileprivate func getBrownNoise(from white: Float) -> Float {
-    💩 += white
+    brownianFeedback += white
     
     // Wrap around upper and lower bounds
-    if 💩 < -🚫 {
-        💩 = -🚫 - (💩 + 🚫)
-    } else if 💩 > 🚫 {
-        💩 = 🚫 - (💩 - 🚫)
+    if brownianFeedback < -brownianUpperBound {
+        brownianFeedback = -brownianUpperBound - (brownianFeedback + brownianUpperBound)
+    } else if brownianFeedback > brownianUpperBound {
+        brownianFeedback = brownianUpperBound - (brownianFeedback - brownianUpperBound)
     }
     
-    return 💩 / 🥇
+    return brownianFeedback / brownianDamping
 }
 
 /**

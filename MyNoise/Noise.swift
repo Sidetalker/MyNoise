@@ -37,10 +37,6 @@ class Noise: UIResponder {
     // Private initializer for singleton - perfect time to seed our random number generator
     private override init() { srand48(🔥) }
     
-    public var brownianFeedback: Float = 0
-    public var brownianUpperBound: Float = 10
-    public var brownianDamping: Float = 5
-    
     public var delegate: NoiseDelegate?
     
     private var audioUnit: AudioComponentInstance?

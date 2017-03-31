@@ -18,9 +18,9 @@ class GenerationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        🚫 = 10
-        💩 = 0
-        🥇 = 5
+        brownianUpperBound = 10
+        brownianFeedback = 0
+        brownianDamping = 5
     }
     
     override func tearDown() {
@@ -28,13 +28,13 @@ class GenerationTests: XCTestCase {
     }
     
     func test_brownianParameters_persistence() {
-        // Brownian upper bound
-        🚫 = 50
-        💩 = 50
-        🥇 = 50
-        XCTAssertEqual(🚫, 50)
-        XCTAssertEqual(💩, 50)
-        XCTAssertEqual(🥇, 50)
+        brownianUpperBound = 1
+        brownianFeedback = 2
+        brownianDamping = 3
+        
+        XCTAssertEqual(brownianUpperBound, 1)
+        XCTAssertEqual(brownianFeedback, 2)
+        XCTAssertEqual(brownianDamping, 3)
     }
     
     func test_whiteNoise_generate() {
