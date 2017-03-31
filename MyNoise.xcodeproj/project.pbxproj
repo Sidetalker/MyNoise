@@ -20,6 +20,7 @@
 		0A59D5AE1E5A234A00404B2C /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */; };
 		0A59D5AF1E5A242500404B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3F1E58C18200143B8C /* Main.storyboard */; };
 		0A8062521E6EC6C200CDFC86 /* NoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */; };
+		0AB1F5731E8E7EFE008CA4B4 /* ColorThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1F5721E8E7EFE008CA4B4 /* ColorThemeButton.swift */; };
 		0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */; };
 		0ADF3F3E1E58C18200143B8C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3D1E58C18200143B8C /* MainViewController.swift */; };
 		0ADF3F411E58C18200143B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3F1E58C18200143B8C /* Main.storyboard */; };
@@ -103,6 +104,7 @@
 		0A59D59C1E5A22D700404B2C /* NoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseUITests.swift; sourceTree = "<group>"; };
 		0A59D59E1E5A22D700404B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoiseTests.swift; sourceTree = "<group>"; };
+		0AB1F5721E8E7EFE008CA4B4 /* ColorThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorThemeButton.swift; sourceTree = "<group>"; };
 		0ADF3F381E58C18200143B8C /* MyNoise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNoise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ADF3F3D1E58C18200143B8C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */,
+				0AB1F5721E8E7EFE008CA4B4 /* ColorThemeButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			files = (
 				0A59D5AE1E5A234A00404B2C /* PlayPauseButton.swift in Sources */,
 				0A59D5AD1E5A234600404B2C /* NoisePaint.swift in Sources */,
+				0AB1F5731E8E7EFE008CA4B4 /* ColorThemeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

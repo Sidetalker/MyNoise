@@ -47,7 +47,7 @@ public extension PlayPauseButtonDelegate {
 }
 
 @IBDesignable
-public class PlayPauseButton: UIControl, UITableViewDelegate {
+public class PlayPauseButton: UIControl {
     /// The current state's string representation
     @IBInspectable private(set) var stateName: String? {
         get {
