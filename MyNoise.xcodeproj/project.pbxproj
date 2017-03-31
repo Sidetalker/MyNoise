@@ -94,8 +94,8 @@
 /* Begin PBXFileReference section */
 		0A56213B1E5A3642005E3E92 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
 		0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
-		0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayPauseButton.swift; path = ../MyNoise/PlayPauseButton.swift; sourceTree = "<group>"; };
-		0A59D5841E5A08B300404B2C /* NoisePaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoisePaint.swift; path = MyNoise/NoisePaint.swift; sourceTree = SOURCE_ROOT; };
+		0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayPauseButton.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
+		0A59D5841E5A08B300404B2C /* NoisePaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoisePaint.swift; path = NoisePaint.swift; sourceTree = "<group>"; };
 		0A59D5861E5A08D000404B2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A59D58D1E5A22D700404B2C /* NoiseUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoiseUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A59D58F1E5A22D700404B2C /* NoiseUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoiseUI.h; sourceTree = "<group>"; };
@@ -173,10 +173,11 @@
 		0A59D5561E5A01FC00404B2C /* Core Noise */ = {
 			isa = PBXGroup;
 			children = (
-				0ADF3F711E591F1F00143B8C /* Noise.swift */,
 				0ADF3F731E592C1D00143B8C /* Generators.swift */,
+				0ADF3F711E591F1F00143B8C /* Noise.swift */,
 			);
 			name = "Core Noise";
+			path = "Core Noise";
 			sourceTree = "<group>";
 		};
 		0A59D5581E5A022500404B2C /* Helpers */ = {
@@ -185,6 +186,7 @@
 				0ADF3F771E5950FA00143B8C /* Globals.swift */,
 			);
 			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0A59D5591E5A023100404B2C /* View Controllers */ = {
@@ -193,32 +195,35 @@
 				0ADF3F3D1E58C18200143B8C /* MainViewController.swift */,
 			);
 			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		0A59D55A1E5A027C00404B2C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				0ADF3F3F1E58C18200143B8C /* Main.storyboard */,
 				0ADF3F441E58C18200143B8C /* LaunchScreen.storyboard */,
+				0ADF3F3F1E58C18200143B8C /* Main.storyboard */,
 			);
 			name = Storyboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		0A59D55B1E5A028C00404B2C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0A59D5591E5A023100404B2C /* View Controllers */,
 				0A59D55A1E5A027C00404B2C /* Storyboards */,
+				0A59D5591E5A023100404B2C /* View Controllers */,
 			);
 			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		0A59D58E1E5A22D700404B2C /* NoiseUI */ = {
 			isa = PBXGroup;
 			children = (
-				0A59D5841E5A08B300404B2C /* NoisePaint.swift */,
-				0A59D5AA1E5A22E900404B2C /* Views */,
 				0A59D5AC1E5A232500404B2C /* Resources */,
+				0A59D5AA1E5A22E900404B2C /* Views */,
+				0A59D5841E5A08B300404B2C /* NoisePaint.swift */,
 			);
 			path = NoiseUI;
 			sourceTree = "<group>";
@@ -226,8 +231,8 @@
 		0A59D59B1E5A22D700404B2C /* NoiseUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0A59D59C1E5A22D700404B2C /* NoiseUITests.swift */,
 				0A59D59E1E5A22D700404B2C /* Info.plist */,
+				0A59D59C1E5A22D700404B2C /* NoiseUITests.swift */,
 			);
 			path = NoiseUITests;
 			sourceTree = "<group>";
@@ -235,10 +240,11 @@
 		0A59D5AA1E5A22E900404B2C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */,
 				0AB1F5721E8E7EFE008CA4B4 /* ColorThemeButton.swift */,
+				0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */,
 			);
 			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0A59D5AB1E5A230300404B2C /* Resources */ = {
@@ -248,26 +254,28 @@
 				0ADF3F471E58C18200143B8C /* Info.plist */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		0A59D5AC1E5A232500404B2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0A59D58F1E5A22D700404B2C /* NoiseUI.h */,
 				0A59D5901E5A22D700404B2C /* Info.plist */,
+				0A59D58F1E5A22D700404B2C /* NoiseUI.h */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		0ADF3F2F1E58C18200143B8C = {
 			isa = PBXGroup;
 			children = (
-				0A59D58E1E5A22D700404B2C /* NoiseUI */,
-				0A59D59B1E5A22D700404B2C /* NoiseUITests */,
+				0ADF3F6E1E58C86500143B8C /* Frameworks */,
 				0ADF3F3A1E58C18200143B8C /* MyNoise */,
 				0ADF3F4F1E58C18200143B8C /* MyNoiseTests */,
 				0ADF3F5A1E58C18200143B8C /* MyNoiseUITests */,
-				0ADF3F6E1E58C86500143B8C /* Frameworks */,
+				0A59D58E1E5A22D700404B2C /* NoiseUI */,
+				0A59D59B1E5A22D700404B2C /* NoiseUITests */,
 				0ADF3F391E58C18200143B8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -287,11 +295,11 @@
 		0ADF3F3A1E58C18200143B8C /* MyNoise */ = {
 			isa = PBXGroup;
 			children = (
-				0A59D55B1E5A028C00404B2C /* UI */,
 				0A59D5561E5A01FC00404B2C /* Core Noise */,
 				0A59D5581E5A022500404B2C /* Helpers */,
-				0ADF3F421E58C18200143B8C /* Assets.xcassets */,
 				0A59D5AB1E5A230300404B2C /* Resources */,
+				0A59D55B1E5A028C00404B2C /* UI */,
+				0ADF3F421E58C18200143B8C /* Assets.xcassets */,
 			);
 			path = MyNoise;
 			sourceTree = "<group>";
@@ -300,8 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				0ADF3F501E58C18200143B8C /* GenerationTests.swift */,
-				0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */,
 				0ADF3F521E58C18200143B8C /* Info.plist */,
+				0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */,
 			);
 			path = MyNoiseTests;
 			sourceTree = "<group>";
@@ -309,8 +317,8 @@
 		0ADF3F5A1E58C18200143B8C /* MyNoiseUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0ADF3F5B1E58C18200143B8C /* MyNoiseUITests.swift */,
 				0ADF3F5D1E58C18200143B8C /* Info.plist */,
+				0ADF3F5B1E58C18200143B8C /* MyNoiseUITests.swift */,
 			);
 			path = MyNoiseUITests;
 			sourceTree = "<group>";
@@ -643,6 +651,7 @@
 				0ADF3F401E58C18200143B8C /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		0ADF3F441E58C18200143B8C /* LaunchScreen.storyboard */ = {
@@ -651,6 +660,7 @@
 				0ADF3F451E58C18200143B8C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -667,7 +677,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = NoiseUI/Info.plist;
+				INFOPLIST_FILE = NoiseUI/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.NoiseUI;
@@ -690,7 +700,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = NO;
-				INFOPLIST_FILE = NoiseUI/Info.plist;
+				INFOPLIST_FILE = NoiseUI/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.NoiseUI;
@@ -833,7 +843,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MyNoise/Info.plist;
+				INFOPLIST_FILE = MyNoise/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -851,7 +861,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MyNoise/Info.plist;
+				INFOPLIST_FILE = MyNoise/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
