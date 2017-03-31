@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import SwiftyBeaver
+import Bugsnag
 
 /// SwiftyBeaver logger, see `AppDelegate.configureLogging()` for configuration
 let log = SwiftyBeaver.self
@@ -21,10 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureAudio()
         configureLogging()
+    
         return true
     }
     
-    /// Set up SwiftBeaver
+    /// Set up SwiftBeaver and Bugsnag
     func configureLogging() {
         let console = ConsoleDestination()  // log to Xcode Console
         let file = FileDestination()  // log to default swiftybeaver.log file
@@ -35,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         log.addDestination(console)
         log.addDestination(file)
+        
+        Bugsnag.start(withApiKey: "16cb4cadc49caa0fbac6dace97a27cf4")
     }
     
     /// Configure app for background audio

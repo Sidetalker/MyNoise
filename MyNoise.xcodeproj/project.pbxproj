@@ -19,16 +19,20 @@
 		0A59D5AD1E5A234600404B2C /* NoisePaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59D5841E5A08B300404B2C /* NoisePaint.swift */; };
 		0A59D5AE1E5A234A00404B2C /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */; };
 		0A59D5AF1E5A242500404B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3F1E58C18200143B8C /* Main.storyboard */; };
+		0A8062521E6EC6C200CDFC86 /* NoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */; };
 		0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */; };
-		0ADF3F3E1E58C18200143B8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3D1E58C18200143B8C /* ViewController.swift */; };
+		0ADF3F3E1E58C18200143B8C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3D1E58C18200143B8C /* MainViewController.swift */; };
 		0ADF3F411E58C18200143B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3F1E58C18200143B8C /* Main.storyboard */; };
 		0ADF3F431E58C18200143B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F421E58C18200143B8C /* Assets.xcassets */; };
 		0ADF3F461E58C18200143B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F441E58C18200143B8C /* LaunchScreen.storyboard */; };
-		0ADF3F511E58C18200143B8C /* MyNoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F501E58C18200143B8C /* MyNoiseTests.swift */; };
+		0ADF3F511E58C18200143B8C /* GenerationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F501E58C18200143B8C /* GenerationTests.swift */; };
 		0ADF3F5C1E58C18200143B8C /* MyNoiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F5B1E58C18200143B8C /* MyNoiseUITests.swift */; };
 		0ADF3F721E591F1F00143B8C /* Noise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F711E591F1F00143B8C /* Noise.swift */; };
 		0ADF3F741E592C1D00143B8C /* Generators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F731E592C1D00143B8C /* Generators.swift */; };
-		0ADF3F781E5950FA00143B8C /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F771E5950FA00143B8C /* Emoji.swift */; };
+		0ADF3F781E5950FA00143B8C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F771E5950FA00143B8C /* Globals.swift */; };
+		0ADF8F221E89950100520E53 /* Bugsnag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADF8F211E89950100520E53 /* Bugsnag.framework */; };
+		0ADF8F231E89950500520E53 /* Bugsnag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADF8F211E89950100520E53 /* Bugsnag.framework */; };
+		0ADF8F241E89950500520E53 /* Bugsnag.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADF8F211E89950100520E53 /* Bugsnag.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0ADF8F241E89950500520E53 /* Bugsnag.framework in Embed Frameworks */,
 				0A59D5A31E5A22D700404B2C /* NoiseUI.framework in Embed Frameworks */,
 				0A5621401E5A3647005E3E92 /* SwiftyBeaver.framework in Embed Frameworks */,
 				0A56213D1E5A3642005E3E92 /* Chameleon.framework in Embed Frameworks */,
@@ -97,15 +102,16 @@
 		0A59D5951E5A22D700404B2C /* NoiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A59D59C1E5A22D700404B2C /* NoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseUITests.swift; sourceTree = "<group>"; };
 		0A59D59E1E5A22D700404B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoiseTests.swift; sourceTree = "<group>"; };
 		0ADF3F381E58C18200143B8C /* MyNoise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNoise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0ADF3F3D1E58C18200143B8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0ADF3F3D1E58C18200143B8C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0ADF3F401E58C18200143B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0ADF3F421E58C18200143B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0ADF3F451E58C18200143B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0ADF3F471E58C18200143B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ADF3F4C1E58C18200143B8C /* MyNoiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNoiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ADF3F501E58C18200143B8C /* MyNoiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNoiseTests.swift; sourceTree = "<group>"; };
+		0ADF3F501E58C18200143B8C /* GenerationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationTests.swift; sourceTree = "<group>"; };
 		0ADF3F521E58C18200143B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ADF3F571E58C18200143B8C /* MyNoiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNoiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADF3F5B1E58C18200143B8C /* MyNoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNoiseUITests.swift; sourceTree = "<group>"; };
@@ -113,7 +119,8 @@
 		0ADF3F6F1E58E14300143B8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0ADF3F711E591F1F00143B8C /* Noise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noise.swift; sourceTree = "<group>"; };
 		0ADF3F731E592C1D00143B8C /* Generators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generators.swift; sourceTree = "<group>"; };
-		0ADF3F771E5950FA00143B8C /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		0ADF3F771E5950FA00143B8C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		0ADF8F211E89950100520E53 /* Bugsnag.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugsnag.framework; path = Carthage/Build/iOS/Bugsnag.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +146,8 @@
 				0A59D5A21E5A22D700404B2C /* NoiseUI.framework in Frameworks */,
 				0A56213F1E5A3647005E3E92 /* SwiftyBeaver.framework in Frameworks */,
 				0A56213C1E5A3642005E3E92 /* Chameleon.framework in Frameworks */,
+				0ADF8F221E89950100520E53 /* Bugsnag.framework in Frameworks */,
+				0ADF8F231E89950500520E53 /* Bugsnag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +180,7 @@
 		0A59D5581E5A022500404B2C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0ADF3F771E5950FA00143B8C /* Emoji.swift */,
+				0ADF3F771E5950FA00143B8C /* Globals.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -179,7 +188,7 @@
 		0A59D5591E5A023100404B2C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0ADF3F3D1E58C18200143B8C /* ViewController.swift */,
+				0ADF3F3D1E58C18200143B8C /* MainViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -287,7 +296,8 @@
 		0ADF3F4F1E58C18200143B8C /* MyNoiseTests */ = {
 			isa = PBXGroup;
 			children = (
-				0ADF3F501E58C18200143B8C /* MyNoiseTests.swift */,
+				0ADF3F501E58C18200143B8C /* GenerationTests.swift */,
+				0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */,
 				0ADF3F521E58C18200143B8C /* Info.plist */,
 			);
 			path = MyNoiseTests;
@@ -305,6 +315,7 @@
 		0ADF3F6E1E58C86500143B8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0ADF8F211E89950100520E53 /* Bugsnag.framework */,
 				0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */,
 				0A56213B1E5A3642005E3E92 /* Chameleon.framework */,
 				0A59D5861E5A08D000404B2C /* UIKit.framework */,
@@ -533,6 +544,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyBeaver.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bugsnag.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -565,8 +577,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ADF3F781E5950FA00143B8C /* Emoji.swift in Sources */,
-				0ADF3F3E1E58C18200143B8C /* ViewController.swift in Sources */,
+				0ADF3F781E5950FA00143B8C /* Globals.swift in Sources */,
+				0ADF3F3E1E58C18200143B8C /* MainViewController.swift in Sources */,
 				0ADF3F741E592C1D00143B8C /* Generators.swift in Sources */,
 				0ADF3F721E591F1F00143B8C /* Noise.swift in Sources */,
 				0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */,
@@ -577,7 +589,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ADF3F511E58C18200143B8C /* MyNoiseTests.swift in Sources */,
+				0A8062521E6EC6C200CDFC86 /* NoiseTests.swift in Sources */,
+				0ADF3F511E58C18200143B8C /* GenerationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +662,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = NoiseUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -671,6 +685,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = NoiseUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

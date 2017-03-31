@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  MyNoise
 //
 //  Created by Kevin Sullivan on 2/18/17.
@@ -9,7 +9,7 @@
 import UIKit
 import NoiseUI
 
-class ViewController: UIViewController, PlayPauseButtonDelegate {
+class MainViewController: UIViewController, PlayPauseButtonDelegate {
     
     @IBOutlet weak var playButton: PlayPauseButton! {
         didSet {

@@ -63,7 +63,7 @@ public func generateWhiteNoise(count: Int) -> NoisePoints {
         
         // Box-Muller transform
         let x = sqrt(-2 * Darwin.log(a)) * sin(2 * M_PI * b)
-        let y = sqrt(-2 * Darwin.log(a)) * cos(2 * M_PI * b)
+        let y = sqrt(-2 * Darwin.log(b)) * cos(2 * M_PI * a)
         
         whiteNoise.append(Float(x))
         whiteNoise.append(Float(y))

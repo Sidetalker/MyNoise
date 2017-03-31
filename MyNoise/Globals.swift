@@ -1,5 +1,5 @@
 //
-//  Emoji.swift
+//  Globals.swift
 //  MyNoise
 //
 //  Created by Kevin Sullivan on 2/18/17.
@@ -34,6 +34,6 @@ var 🥇: Float {
     get {
         return Noise.shared.brownianDamping
     } set {
-        Noise.shared.brownianFeedback = newValue
+        Noise.shared.brownianDamping = newValue
     }
 }

@@ -1,2 +1,3 @@
 github "ViccAlexander/Chameleon" "2.2.0"
-github "SwiftyBeaver/SwiftyBeaver" "1.1.1"
+github "SwiftyBeaver/SwiftyBeaver" "1.1.3"
+github "bugsnag/bugsnag-cocoa" "v5.7.0"

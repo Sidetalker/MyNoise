@@ -43,10 +43,12 @@ class Noise: UIResponder {
     
     public var delegate: NoiseDelegate?
     
-    private var audioUnit: AudioComponentInstance? = nil
-    
+    private var audioUnit: AudioComponentInstance?
     /// - note: Use `change(to:)` to change the type of noise
     private(set) var type: NoiseType = .brown
+    
+    /// The most recent time Noise was toggled
+    private var lastTimeToggled: TimeInterval = Date().timeIntervalSince1970
     
     public var isPlaying = false
     
@@ -72,20 +74,25 @@ class Noise: UIResponder {
     }
     
     /// Toggles the current state (stops if playing, starts if not playing)
-    public class func toggle() { return Noise.shared.toggle() }
+    @discardableResult public class func toggle() -> OSStatus { return Noise.shared.toggle() }
     
-    private func toggle() {
+    @discardableResult private func toggle() -> OSStatus {
         if isPlaying {
-            stop()
+            return stop()
         } else {
-            start()
+            return start()
         }
     }
     
     /// Stops outputting noise
-    public class func stop() { return Noise.shared.stop() }
+    @discardableResult public class func stop() -> OSStatus { return Noise.shared.stop() }
     
     @discardableResult private func start() -> OSStatus {
+        guard
+            !isPlaying, Date().timeIntervalSince1970 - lastTimeToggled > 2 else {
+            return kAudioComponentErr_NotPermitted
+        }
+        
         log.debug("Preparing audio unit")
         
         var result = prepareAudio()
@@ -111,14 +118,19 @@ class Noise: UIResponder {
             return result
         }
         
+        isPlaying = true
+        lastTimeToggled = Date().timeIntervalSince1970
         delegate?.noiseDidStart()
         
         return result
     }
 
-    private func stop() {
-        guard let audioUnit = audioUnit else {
-            return
+    @discardableResult private func stop() -> OSStatus {
+        guard
+            let audioUnit = audioUnit,
+            isPlaying, Date().timeIntervalSince1970 - lastTimeToggled > 2
+        else {
+            return kAudioComponentErr_NotPermitted
         }
         
         log.debug("Stopping audio")
@@ -127,7 +139,11 @@ class Noise: UIResponder {
         AudioUnitUninitialize(audioUnit)
         AudioComponentInstanceDispose(audioUnit)
         
+        isPlaying = false
+        lastTimeToggled = Date().timeIntervalSince1970
         delegate?.noiseDidStop()
+        
+        return noErr
     }
     
     /**
@@ -222,7 +238,7 @@ class Noise: UIResponder {
         return noErr
     }
     
-    @objc class func handleInterruption() {
+    class func handleInterruption() {
         log.debug("Audio session interupted")
         
         Noise.shared.delegate?.noiseInterrupted()
