@@ -8,16 +8,16 @@
 
 import UIKit
 
-protocol DropletDelegate {
+public protocol DropletDelegate {
     func dropletTapped(droplet: DropletView)
 }
 
 @IBDesignable
-class DropletView: UIView {
+public class DropletView: UIView {
     
     public var delegate: DropletDelegate?
     
-    @IBInspectable public var themeString: String {
+    @IBInspectable var themeString: String {
         get { return String(describing: theme) }
         set { theme = Theme(rawValue: newValue) ?? .blue }
     }
@@ -34,11 +34,11 @@ class DropletView: UIView {
         didSet { setNeedsDisplay() }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         delegate?.dropletTapped(droplet: self)
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         let inset = rect.width - (rect.width * badgeScaleFactor)
         let frame = rect.insetBy(dx: hasBadge ? inset : 0, dy: hasBadge ? inset : 0)
         

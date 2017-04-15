@@ -9,18 +9,18 @@
 import UIKit
 
 @IBDesignable
-class BadgeView: UIView {
+public class BadgeView: UIView {
     
-    @IBInspectable public var themeString: String {
+    @IBInspectable var themeString: String {
         get { return String(describing: theme) }
         set { theme = Theme(rawValue: newValue) ?? .blue }
     }
     
-    var theme: Theme = .blue {
+    public var theme: Theme = .blue {
         didSet { setNeedsDisplay() }
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         switch theme {
         case .blue: NoisePaint.drawBlueBadge(frame: rect)
         case .yellow: NoisePaint.drawYellowBadge(frame: rect)

@@ -18,7 +18,6 @@
 		0A59D5AE1E5A234A00404B2C /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */; };
 		0A59D5AF1E5A242500404B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3F1E58C18200143B8C /* Main.storyboard */; };
 		0A8062521E6EC6C200CDFC86 /* NoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */; };
-		0AAC98881EA291DD0007B238 /* RadialPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC98871EA291DD0007B238 /* RadialPaletteView.swift */; };
 		0AAC988A1EA2923D0007B238 /* DropletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC98891EA2923D0007B238 /* DropletView.swift */; };
 		0AAC988C1EA2953A0007B238 /* CogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC988B1EA2953A0007B238 /* CogView.swift */; };
 		0AAC988E1EA2964A0007B238 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC988D1EA2964A0007B238 /* BadgeView.swift */; };
@@ -105,7 +104,6 @@
 		0A59D59C1E5A22D700404B2C /* NoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseUITests.swift; sourceTree = "<group>"; };
 		0A59D59E1E5A22D700404B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoiseTests.swift; sourceTree = "<group>"; };
-		0AAC98871EA291DD0007B238 /* RadialPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialPaletteView.swift; sourceTree = "<group>"; };
 		0AAC98891EA2923D0007B238 /* DropletView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropletView.swift; sourceTree = "<group>"; };
 		0AAC988B1EA2953A0007B238 /* CogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CogView.swift; sourceTree = "<group>"; };
 		0AAC988D1EA2964A0007B238 /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 		0A59D5AA1E5A22E900404B2C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0AAC98871EA291DD0007B238 /* RadialPaletteView.swift */,
 				0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */,
 				0AAC98891EA2923D0007B238 /* DropletView.swift */,
 				0AAC988B1EA2953A0007B238 /* CogView.swift */,
@@ -457,28 +454,33 @@
 					0A59D58C1E5A22D700404B2C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = S7BT87895F;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					0A59D5941E5A22D700404B2C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ENK6LV73Q6;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0ADF3F371E58C18200143B8C;
 					};
 					0ADF3F371E58C18200143B8C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = S7BT87895F;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					0ADF3F4B1E58C18200143B8C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ENK6LV73Q6;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0ADF3F371E58C18200143B8C;
 					};
 					0ADF3F561E58C18200143B8C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ENK6LV73Q6;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0ADF3F371E58C18200143B8C;
 					};
@@ -576,7 +578,6 @@
 				0AAC988C1EA2953A0007B238 /* CogView.swift in Sources */,
 				0A59D5AE1E5A234A00404B2C /* PlayPauseButton.swift in Sources */,
 				0AAC988A1EA2923D0007B238 /* DropletView.swift in Sources */,
-				0AAC98881EA291DD0007B238 /* RadialPaletteView.swift in Sources */,
 				0AAC98941EA2C9CC0007B238 /* NameView.swift in Sources */,
 				0A59D5AD1E5A234600404B2C /* NoisePaint.swift in Sources */,
 				0AAC98921EA299020007B238 /* Theme.swift in Sources */,

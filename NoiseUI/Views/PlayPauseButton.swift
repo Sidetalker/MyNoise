@@ -49,23 +49,17 @@ public extension PlayPauseButtonDelegate {
 @IBDesignable
 public class PlayPauseButton: UIControl {
     /// The current state's string representation
-    @IBInspectable private(set) var stateName: String? {
-        get {
-            return String(describing: currentState)
-        }
-        set {
-            if let state = PlayPauseButtonState(rawValue: newValue?.lowercased() ?? "") {
-                internalState = state
-            }
-        }
+    @IBInspectable var stateName: String? {
+        get { return String(describing: currentState) }
+        set { internalState = PlayPauseButtonState(rawValue: newValue ?? "") ?? .play }
     }
     
-    @IBInspectable public var themeString: String {
+    @IBInspectable var themeString: String {
         get { return String(describing: theme) }
         set { theme = Theme(rawValue: newValue) ?? .blue }
     }
     
-    var theme: Theme = .blue {
+    public var theme: Theme = .blue {
         didSet { setNeedsDisplay() }
     }
     

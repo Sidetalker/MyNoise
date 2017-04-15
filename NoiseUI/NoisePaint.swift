@@ -1133,6 +1133,10 @@ public class NoisePaint : NSObject {
         bezier98Path.close()
         NoisePaint.blueAccent.setFill()
         bezier98Path.fill()
+        NoisePaint.blueAccent.setStroke()
+        bezier98Path.lineWidth = 2
+        bezier98Path.miterLimit = 4
+        bezier98Path.stroke()
 
 
         //// Bezier 46 Drawing
@@ -1221,6 +1225,10 @@ public class NoisePaint : NSObject {
         bezier97Path.close()
         NoisePaint.yellowAccent.setFill()
         bezier97Path.fill()
+        NoisePaint.yellowAccent.setStroke()
+        bezier97Path.lineWidth = 2
+        bezier97Path.miterLimit = 4
+        bezier97Path.stroke()
 
 
         //// Bezier 44 Drawing
@@ -1338,6 +1346,11 @@ public class NoisePaint : NSObject {
         bezier99Path.close()
         NoisePaint.greenAccent.setFill()
         bezier99Path.fill()
+        NoisePaint.greenAccent.setStroke()
+        bezier99Path.lineWidth = 2
+        bezier99Path.miterLimit = 4
+        bezier99Path.lineCapStyle = .round
+        bezier99Path.stroke()
 
 
         //// Bezier 43 Drawing
@@ -1460,6 +1473,11 @@ public class NoisePaint : NSObject {
         bezier16Path.close()
         NoisePaint.redAccent.setFill()
         bezier16Path.fill()
+        NoisePaint.redAccent.setStroke()
+        bezier16Path.lineWidth = 2
+        bezier16Path.miterLimit = 4
+        bezier16Path.lineCapStyle = .round
+        bezier16Path.stroke()
 
 
         //// Bezier 48 Drawing
@@ -1585,6 +1603,10 @@ public class NoisePaint : NSObject {
         bezier17Path.close()
         NoisePaint.purpleAccent.setFill()
         bezier17Path.fill()
+        NoisePaint.purpleAccent.setStroke()
+        bezier17Path.lineWidth = 2
+        bezier17Path.miterLimit = 4
+        bezier17Path.stroke()
 
 
         //// Bezier 47 Drawing

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import AudioToolbox
 
 public enum NoiseType {
