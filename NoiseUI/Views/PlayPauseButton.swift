@@ -60,8 +60,14 @@ public class PlayPauseButton: UIControl {
         }
     }
     
-    /// The color of the button
-    @IBInspectable public var color: UIColor = .black
+    @IBInspectable public var themeString: String {
+        get { return String(describing: theme) }
+        set { theme = Theme(rawValue: newValue) ?? .blue }
+    }
+    
+    var theme: Theme = .blue {
+        didSet { setNeedsDisplay() }
+    }
     
     /// The internal state used to draw the button
     private var internalState: PlayPauseButtonState = .play {
@@ -85,13 +91,22 @@ public class PlayPauseButton: UIControl {
     }
     
     private func configure() {
+        backgroundColor = .clear
         addTarget(self, action: #selector(PlayPauseButton.buttonTapped), for: .touchDown)
     }
     
     override public func draw(_ rect: CGRect) {
-        switch internalState {
-        case .play: NoisePaint.drawPlay(frame: rect, buttonFill: color)
-        case .pause: NoisePaint.drawPause(frame: rect, buttonFill: color)
+        switch (internalState, theme) {
+        case (.play, .blue): NoisePaint.drawBluePlay(frame: rect)
+        case (.play, .yellow): NoisePaint.drawYellowPlay(frame: rect)
+        case (.play, .red): NoisePaint.drawRedPlay(frame: rect)
+        case (.play, .purple): NoisePaint.drawPurplePlay(frame: rect)
+        case (.play, .green): NoisePaint.drawGreenPlay(frame: rect)
+        case (.pause, .blue): NoisePaint.drawBluePause(frame: rect)
+        case (.pause, .yellow): NoisePaint.drawYellowPause(frame: rect)
+        case (.pause, .red): NoisePaint.drawRedPause(frame: rect)
+        case (.pause, .purple): NoisePaint.drawPurplePause(frame: rect)
+        case (.pause, .green): NoisePaint.drawGreenPause(frame: rect)
         }
     }
     

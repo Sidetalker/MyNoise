@@ -9,16 +9,18 @@
 import UIKit
 import NoiseUI
 
-class MainViewController: UIViewController, PlayPauseButtonDelegate {
+class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDelegate, CogDelegate {
     
     @IBOutlet weak var playButton: PlayPauseButton! {
-        didSet {
-            playButton.delegate = self
-        }
+        didSet { playButton.delegate = self }
     }
-    
-    /// True if noise is currently playing
-    var isPlaying = false
+    @IBOutlet weak var droplet: DropletView! {
+        didSet { droplet.delegate = self }
+    }
+    @IBOutlet weak var cog: CogView! {
+        didSet { cog.delegate = self }
+    }
+    @IBOutlet weak var themeTitle: NameView!
     
     override var prefersStatusBarHidden: Bool { return true }
 

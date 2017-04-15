@@ -8,7 +8,6 @@
 
 import Foundation
 import AudioToolbox
-import Chameleon
 
 public enum NoiseType {
     case white, brown

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,32 +20,72 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUd-Pj-xE4" customClass="PlayPauseButton" customModule="NoiseUI">
-                                <rect key="frame" x="137" y="283" width="100" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="157" y="318" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Kx7-p9-icZ"/>
                                     <constraint firstAttribute="width" secondItem="sUd-Pj-xE4" secondAttribute="height" multiplier="1:1" id="WXJ-1G-8ta"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="pause"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="play"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="blue"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4L-xb-r7s" customClass="CogView" customModule="NoiseUI">
+                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N4L-xb-r7s" secondAttribute="height" multiplier="1:1" id="1FP-hV-Qo5"/>
+                                    <constraint firstAttribute="width" constant="40" id="IMB-Pw-pgB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="blue"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ff-dZ-F6K" customClass="DropletView" customModule="NoiseUI">
+                                <rect key="frame" x="354" y="676" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Ff-dZ-F6K" secondAttribute="height" multiplier="1:1" id="K75-Vh-lxU"/>
+                                    <constraint firstAttribute="width" constant="40" id="Y7F-uH-Ld1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="purple"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasBadge" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="badgeScaleFactor">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-Ci-kgE" customClass="NameView" customModule="NoiseUI">
+                                <rect key="frame" x="20" y="676" width="240" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Xhp-3j-siY"/>
+                                    <constraint firstAttribute="width" secondItem="Nkr-Ci-kgE" secondAttribute="height" multiplier="6:1" id="jM4-3W-2J6"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Nkr-Ci-kgE" secondAttribute="leading" id="A5N-Vi-4LJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="N4L-xb-r7s" secondAttribute="leading" id="NIJ-k4-2jv"/>
                             <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S1d-Sh-3nJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Ff-dZ-F6K" secondAttribute="trailing" id="YW4-jH-jqu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Ff-dZ-F6K" secondAttribute="bottom" constant="20" id="pN8-PV-uO9"/>
+                            <constraint firstItem="N4L-xb-r7s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pV0-Ce-J1M"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nkr-Ci-kgE" secondAttribute="bottom" constant="20" id="sFc-Zv-nsN"/>
                             <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yZW-2i-TIS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cog" destination="N4L-xb-r7s" id="ydh-R6-l1Z"/>
+                        <outlet property="droplet" destination="7Ff-dZ-F6K" id="e3X-RX-gtp"/>
                         <outlet property="playButton" destination="sUd-Pj-xE4" id="TS4-f1-oim"/>
+                        <outlet property="themeTitle" destination="Nkr-Ci-kgE" id="JYk-W3-7JK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
