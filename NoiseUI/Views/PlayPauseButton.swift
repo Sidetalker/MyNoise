@@ -104,12 +104,22 @@ public class PlayPauseButton: UIControl {
         }
     }
     
+    public func disable(for interval: TimeInterval) {
+        isEnabled = false
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + interval) {
+            self.isEnabled = true
+        }
+    }
+    
     /**
      Triggered on .touchDown
      
      - note: `@objc` attribute is needed for private/fileprivate target actions
     */
     @objc private func buttonTapped() {
+        guard isEnabled else { return }
+        
         // The publicly visible state will be changed immediately
         currentState = !currentState
         

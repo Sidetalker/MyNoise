@@ -84,8 +84,7 @@ class Noise: UIResponder {
     @discardableResult public class func stop() -> OSStatus { return Noise.shared.stop() }
     
     @discardableResult private func start() -> OSStatus {
-        guard
-            !isPlaying, Date().timeIntervalSince1970 - lastTimeToggled > 2 else {
+        guard !isPlaying else {
             return kAudioComponentErr_NotPermitted
         }
         
@@ -122,10 +121,7 @@ class Noise: UIResponder {
     }
 
     @discardableResult private func stop() -> OSStatus {
-        guard
-            let audioUnit = audioUnit,
-            isPlaying, Date().timeIntervalSince1970 - lastTimeToggled > 2
-        else {
+        guard let audioUnit = audioUnit, isPlaying else {
             return kAudioComponentErr_NotPermitted
         }
         

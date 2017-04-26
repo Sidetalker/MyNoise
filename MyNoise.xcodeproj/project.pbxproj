@@ -17,6 +17,8 @@
 		0A59D5AD1E5A234600404B2C /* NoisePaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59D5841E5A08B300404B2C /* NoisePaint.swift */; };
 		0A59D5AE1E5A234A00404B2C /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */; };
 		0A59D5AF1E5A242500404B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3F1E58C18200143B8C /* Main.storyboard */; };
+		0A712D3C1EB1337000FDBAD2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A712D3A1EB1337000FDBAD2 /* Fabric.framework */; };
+		0A712D3D1EB1337000FDBAD2 /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A712D3B1EB1337000FDBAD2 /* Answers.framework */; };
 		0A8062521E6EC6C200CDFC86 /* NoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */; };
 		0AAC988A1EA2923D0007B238 /* DropletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC98891EA2923D0007B238 /* DropletView.swift */; };
 		0AAC988C1EA2953A0007B238 /* CogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC988B1EA2953A0007B238 /* CogView.swift */; };
@@ -103,6 +105,8 @@
 		0A59D5951E5A22D700404B2C /* NoiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A59D59C1E5A22D700404B2C /* NoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseUITests.swift; sourceTree = "<group>"; };
 		0A59D59E1E5A22D700404B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A712D3A1EB1337000FDBAD2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		0A712D3B1EB1337000FDBAD2 /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Answers.framework; sourceTree = "<group>"; };
 		0A8062511E6EC6C200CDFC86 /* NoiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoiseTests.swift; sourceTree = "<group>"; };
 		0AAC98891EA2923D0007B238 /* DropletView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropletView.swift; sourceTree = "<group>"; };
 		0AAC988B1EA2953A0007B238 /* CogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CogView.swift; sourceTree = "<group>"; };
@@ -150,9 +154,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A712D3D1EB1337000FDBAD2 /* Answers.framework in Frameworks */,
 				0A59D5A21E5A22D700404B2C /* NoiseUI.framework in Frameworks */,
 				0A56213F1E5A3647005E3E92 /* SwiftyBeaver.framework in Frameworks */,
 				0ADF8F221E89950100520E53 /* Bugsnag.framework in Frameworks */,
+				0A712D3C1EB1337000FDBAD2 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +332,8 @@
 		0ADF3F6E1E58C86500143B8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A712D3A1EB1337000FDBAD2 /* Fabric.framework */,
+				0A712D3B1EB1337000FDBAD2 /* Answers.framework */,
 				0ADF8F211E89950100520E53 /* Bugsnag.framework */,
 				0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */,
 				0A59D5861E5A08D000404B2C /* UIKit.framework */,
@@ -394,6 +402,7 @@
 				0ADF3F361E58C18200143B8C /* Resources */,
 				0ADF3F6C1E58C82C00143B8C /* Embed Frameworks */,
 				0ADF3F6D1E58C83A00143B8C /* Copy Carthage Frameworks */,
+				0A712D391EB1334E00FDBAD2 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -551,6 +560,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A712D391EB1334E00FDBAD2 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run e9e0fd3a066ecdbf0929f4b7ad16a4dc16d5468b 29c867f398edb79a7f762f24fb3193b235728bdceb51a924c84ba7c78564ee4d";
+		};
 		0ADF3F6D1E58C83A00143B8C /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -850,6 +873,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyNoise/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -868,6 +892,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyNoise/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

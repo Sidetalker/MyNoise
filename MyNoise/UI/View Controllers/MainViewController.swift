@@ -46,7 +46,7 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
     
     func playPauseButton(_ button: PlayPauseButton, willChangeState state: PlayPauseButtonState) {
         switch state {
-        case .play: Noise.stop()
+        case .play: Noise.stop(); button.disable(for: 0.5);
         case .pause: Noise.start()
         }
     }
