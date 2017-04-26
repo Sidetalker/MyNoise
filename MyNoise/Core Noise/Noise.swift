@@ -88,6 +88,8 @@ class Noise: UIResponder {
             return kAudioComponentErr_NotPermitted
         }
         
+        resetNoiseBuffer()
+        
         log.debug("Preparing audio unit")
         
         var result = prepareAudio()
@@ -136,6 +138,11 @@ class Noise: UIResponder {
         delegate?.noiseDidStop()
         
         return noErr
+    }
+    
+    private func resetNoiseBuffer() {
+        noiseBuffer = type.generator(1000000) // Give 'er a million points
+        noiseBufferOffset = 0
     }
     
     /**
@@ -257,7 +264,8 @@ class Noise: UIResponder {
     }
 }
 
-
+public var noiseBuffer = NoisePoints()
+public var noiseBufferOffset = 0
 
 /// Renders noise based on `Noise` state
 public func renderNoise(inRefCon:UnsafeMutableRawPointer,
@@ -267,10 +275,20 @@ public func renderNoise(inRefCon:UnsafeMutableRawPointer,
                         inNumberFrames:UInt32,
                         ioData:UnsafeMutablePointer<AudioBufferList>?) -> OSStatus {
     
+    let pointCount = Int(inNumberFrames)
     let audioListPointer = UnsafeMutableAudioBufferListPointer(ioData)
     audioListPointer?[0].mDataByteSize = inNumberFrames * uint(MemoryLayout<Float>.size)
     
-    let noise = Noise.generate(count: Int(inNumberFrames))
+    var noise: NoisePoints
+    
+    if (noiseBufferOffset + pointCount) < noiseBuffer.count {
+        noise = Array(noiseBuffer[noiseBufferOffset ..< (noiseBufferOffset + pointCount)])
+        noiseBufferOffset += pointCount
+    } else {
+        noise = Array(noiseBuffer.prefix(upTo: pointCount))
+        noiseBufferOffset = pointCount
+    }
+    
     audioListPointer?[0].mData = UnsafeMutableRawPointer(mutating: noise)
     
     return noErr
