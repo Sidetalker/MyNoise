@@ -8,6 +8,7 @@
 
 import UIKit
 import NoiseUI
+import MediaPlayer
 
 class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDelegate, CogDelegate {
 
@@ -41,7 +42,30 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         theme = .blue
+        
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { remoteEvent in
+            guard !Noise.shared.isPlaying && self.playButton.isEnabled else {
+                return .commandFailed
+            }
+            
+            Noise.start()
+            return .success
+        }
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { remoteEvent in
+            guard Noise.shared.isPlaying && self.playButton.isEnabled else {
+                return .commandFailed
+            }
+            
+            Noise.stop()
+            return .success
+        }
     }
     
     func playPauseButton(_ button: PlayPauseButton, willChangeState state: PlayPauseButtonState) {

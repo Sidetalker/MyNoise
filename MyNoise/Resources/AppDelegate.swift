@@ -50,13 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             try AVAudioSession.sharedInstance().setActive(true)
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            log.debug("Registered for background playback")
         } catch let error {
             log.error("Unable to set up app for background audio playback: \(error)")
         }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(Noise.handleInterruption), name: .AVAudioSessionInterruption, object: nil)
-        UIApplication.shared.beginReceivingRemoteControlEvents()
-        Noise.shared.becomeFirstResponder()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
