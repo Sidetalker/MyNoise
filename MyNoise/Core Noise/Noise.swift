@@ -90,6 +90,15 @@ class Noise: UIResponder {
         
         resetNoiseBuffer()
         
+        defer {
+            isPlaying = true
+            lastTimeToggled = Date().timeIntervalSince1970
+            delegate?.noiseDidStart()
+        }
+        
+        // Already initialized 'er once
+        guard audioUnit == nil else { return noErr }
+        
         log.debug("Preparing audio unit")
         
         var result = prepareAudio()
@@ -123,15 +132,15 @@ class Noise: UIResponder {
     }
 
     @discardableResult private func stop() -> OSStatus {
-        guard let audioUnit = audioUnit, isPlaying else {
+        guard let _ = audioUnit, isPlaying else {
             return kAudioComponentErr_NotPermitted
         }
         
         log.debug("Stopping audio")
         
-        AudioOutputUnitStop(audioUnit)
-        AudioUnitUninitialize(audioUnit)
-        AudioComponentInstanceDispose(audioUnit)
+//        AudioOutputUnitStop(audioUnit)
+//        AudioUnitUninitialize(audioUnit)
+//        AudioComponentInstanceDispose(audioUnit)
         
         isPlaying = false
         lastTimeToggled = Date().timeIntervalSince1970
@@ -273,22 +282,25 @@ public func renderNoise(inRefCon:UnsafeMutableRawPointer,
                         inTimeStamp:UnsafePointer<AudioTimeStamp>,
                         inBusNumber:UInt32,
                         inNumberFrames:UInt32,
-                        ioData:UnsafeMutablePointer<AudioBufferList>?) -> OSStatus {
+                        ioData:UnsafeMutablePointer<AudioBufferList>?) -> OSStatus
+{
+    guard Noise.shared.isPlaying else { return noErr }
     
     let pointCount = Int(inNumberFrames)
     let audioListPointer = UnsafeMutableAudioBufferListPointer(ioData)
     audioListPointer?[0].mDataByteSize = inNumberFrames * uint(MemoryLayout<Float>.size)
+//
+//    var noise: NoisePoints
+//    
+//    if (noiseBufferOffset + pointCount) < noiseBuffer.count {
+//        noise = Array(noiseBuffer[noiseBufferOffset ..< (noiseBufferOffset + pointCount)])
+//        noiseBufferOffset += pointCount
+//    } else {
+//        noise = Array(noiseBuffer.prefix(upTo: pointCount))
+//        noiseBufferOffset = pointCount
+//    }
     
-    var noise: NoisePoints
-    
-    if (noiseBufferOffset + pointCount) < noiseBuffer.count {
-        noise = Array(noiseBuffer[noiseBufferOffset ..< (noiseBufferOffset + pointCount)])
-        noiseBufferOffset += pointCount
-    } else {
-        noise = Array(noiseBuffer.prefix(upTo: pointCount))
-        noiseBufferOffset = pointCount
-    }
-    
+    let noise = Noise.generate(count: pointCount)
     audioListPointer?[0].mData = UnsafeMutableRawPointer(mutating: noise)
     
     return noErr

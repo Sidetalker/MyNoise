@@ -32,20 +32,20 @@ public class NoisePaint : NSObject {
 
     //// Colors
 
-    public dynamic class var blueBase: UIColor { return Cache.blueBase }
-    public dynamic class var blueAccent: UIColor { return Cache.blueAccent }
-    public dynamic class var yellowBase: UIColor { return Cache.yellowBase }
-    public dynamic class var yellowAccent: UIColor { return Cache.yellowAccent }
-    public dynamic class var greenBase: UIColor { return Cache.greenBase }
-    public dynamic class var greenAccent: UIColor { return Cache.greenAccent }
-    public dynamic class var redBase: UIColor { return Cache.redBase }
-    public dynamic class var redAccent: UIColor { return Cache.redAccent }
-    public dynamic class var purpleBase: UIColor { return Cache.purpleBase }
-    public dynamic class var purpleAccent: UIColor { return Cache.purpleAccent }
+    @objc public dynamic class var blueBase: UIColor { return Cache.blueBase }
+    @objc public dynamic class var blueAccent: UIColor { return Cache.blueAccent }
+    @objc public dynamic class var yellowBase: UIColor { return Cache.yellowBase }
+    @objc public dynamic class var yellowAccent: UIColor { return Cache.yellowAccent }
+    @objc public dynamic class var greenBase: UIColor { return Cache.greenBase }
+    @objc public dynamic class var greenAccent: UIColor { return Cache.greenAccent }
+    @objc public dynamic class var redBase: UIColor { return Cache.redBase }
+    @objc public dynamic class var redAccent: UIColor { return Cache.redAccent }
+    @objc public dynamic class var purpleBase: UIColor { return Cache.purpleBase }
+    @objc public dynamic class var purpleAccent: UIColor { return Cache.purpleAccent }
 
     //// Drawing Methods
 
-    public dynamic class func drawBluePlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawBluePlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -67,7 +67,7 @@ public class NoisePaint : NSObject {
         bezier19Path.fill()
     }
 
-    public dynamic class func drawYellowPlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawYellowPlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -89,7 +89,7 @@ public class NoisePaint : NSObject {
         bezier21Path.fill()
     }
 
-    public dynamic class func drawGreenPlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawGreenPlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -112,7 +112,7 @@ public class NoisePaint : NSObject {
         bezier22Path.fill()
     }
 
-    public dynamic class func drawRedPlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawRedPlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -133,7 +133,7 @@ public class NoisePaint : NSObject {
         bezier20Path.fill()
     }
 
-    public dynamic class func drawPurplePlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawPurplePlay(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -154,7 +154,7 @@ public class NoisePaint : NSObject {
         bezier18Path.fill()
     }
 
-    public dynamic class func drawBlueDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
+    @objc public dynamic class func drawBlueDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -183,7 +183,7 @@ public class NoisePaint : NSObject {
         bezier27Path.fill()
     }
 
-    public dynamic class func drawYellowDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
+    @objc public dynamic class func drawYellowDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -212,7 +212,7 @@ public class NoisePaint : NSObject {
         bezier26Path.fill()
     }
 
-    public dynamic class func drawGreenDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
+    @objc public dynamic class func drawGreenDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -242,7 +242,7 @@ public class NoisePaint : NSObject {
         bezier25Path.fill()
     }
 
-    public dynamic class func drawRedDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
+    @objc public dynamic class func drawRedDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -273,7 +273,7 @@ public class NoisePaint : NSObject {
         bezier23Path.fill()
     }
 
-    public dynamic class func drawPurpleDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
+    @objc public dynamic class func drawPurpleDrop(frame: CGRect = CGRect(x: 0, y: 0, width: 60, height: 60)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -304,7 +304,7 @@ public class NoisePaint : NSObject {
         bezier24Path.fill()
     }
 
-    public dynamic class func drawBlueBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawBlueBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -326,7 +326,7 @@ public class NoisePaint : NSObject {
         bezier31Path.fill()
     }
 
-    public dynamic class func drawYellowBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawYellowBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -349,7 +349,7 @@ public class NoisePaint : NSObject {
         bezier29Path.fill()
     }
 
-    public dynamic class func drawGreenBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawGreenBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -372,7 +372,7 @@ public class NoisePaint : NSObject {
         bezier28Path.fill()
     }
 
-    public dynamic class func drawRedBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawRedBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -397,7 +397,7 @@ public class NoisePaint : NSObject {
         bezier30Path.fill()
     }
 
-    public dynamic class func drawPurpleBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawPurpleBadge(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -422,7 +422,7 @@ public class NoisePaint : NSObject {
         bezier32Path.fill()
     }
 
-    public dynamic class func drawBluePause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawBluePause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -455,7 +455,7 @@ public class NoisePaint : NSObject {
         bezier41Path.fill()
     }
 
-    public dynamic class func drawYellowPause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawYellowPause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -489,7 +489,7 @@ public class NoisePaint : NSObject {
         bezier38Path.fill()
     }
 
-    public dynamic class func drawGreenPause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawGreenPause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -523,7 +523,7 @@ public class NoisePaint : NSObject {
         bezier37Path.fill()
     }
 
-    public dynamic class func drawRedPause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawRedPause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -558,7 +558,7 @@ public class NoisePaint : NSObject {
         bezier35Path.fill()
     }
 
-    public dynamic class func drawPurplePause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
+    @objc public dynamic class func drawPurplePause(frame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)) {
 
 
         //// Subframes
@@ -593,7 +593,7 @@ public class NoisePaint : NSObject {
         bezier39Path.fill()
     }
 
-    public dynamic class func drawBlueCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawBlueCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -637,7 +637,7 @@ public class NoisePaint : NSObject {
         bezierPath.fill()
     }
 
-    public dynamic class func drawYellowCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawYellowCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -688,7 +688,7 @@ public class NoisePaint : NSObject {
         bezierPath.fill()
     }
 
-    public dynamic class func drawGreenCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawGreenCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -744,7 +744,7 @@ public class NoisePaint : NSObject {
         bezierPath.fill()
     }
 
-    public dynamic class func drawRedCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawRedCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -790,7 +790,7 @@ public class NoisePaint : NSObject {
         bezierPath.fill()
     }
 
-    public dynamic class func drawPurpleCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
+    @objc public dynamic class func drawPurpleCog(frame: CGRect = CGRect(x: 0, y: 0, width: 80, height: 80)) {
 
 
         //// Subframes
@@ -839,7 +839,7 @@ public class NoisePaint : NSObject {
         bezierPath.fill()
     }
 
-    public dynamic class func drawRedText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
+    @objc public dynamic class func drawRedText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -1004,7 +1004,7 @@ public class NoisePaint : NSObject {
         bezier108Path.fill()
     }
 
-    public dynamic class func drawGreenText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
+    @objc public dynamic class func drawGreenText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -1200,7 +1200,7 @@ public class NoisePaint : NSObject {
         bezier83Path.fill()
     }
 
-    public dynamic class func drawBlueText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
+    @objc public dynamic class func drawBlueText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -1394,7 +1394,7 @@ public class NoisePaint : NSObject {
         bezier73Path.fill()
     }
 
-    public dynamic class func drawYellowText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
+    @objc public dynamic class func drawYellowText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -1555,7 +1555,7 @@ public class NoisePaint : NSObject {
         bezier69Path.fill()
     }
 
-    public dynamic class func drawPurpleText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
+    @objc public dynamic class func drawPurpleText(frame: CGRect = CGRect(x: 0, y: 0, width: 600, height: 100)) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
