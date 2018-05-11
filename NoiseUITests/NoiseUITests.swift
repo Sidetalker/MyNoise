@@ -20,8 +20,8 @@ class NoiseUITests: XCTestCase {
     }
     
     func test_painting() {
-        NoisePaint.drawPlay()
-        NoisePaint.drawPause()
+        NoisePaint.drawRedPlay()
+        NoisePaint.drawRedPause()
     }
     
     func test_playPauseButton() {
