@@ -25,7 +25,7 @@ class NoiseUITests: XCTestCase {
     }
     
     func test_playPauseButton() {
-        var button = PlayPauseButton(frame: .zero)
+        var _ = PlayPauseButton(frame: .zero)
     }
     
 }

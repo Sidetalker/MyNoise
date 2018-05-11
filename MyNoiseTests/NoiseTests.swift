@@ -53,15 +53,7 @@ class NoiseTests: XCTestCase {
         startNoise()
         
         let result: OSStatus = Noise.stop()
-        XCTAssertEqual(result, kAudioComponentErr_NotPermitted) // Toggled too quick, expect error
-        XCTAssertTrue(Noise.shared.isPlaying)
-    }
-    
-    func test_noise_delayedStop() {
-        startNoise()
-        sleep(3)
-        
-        Noise.stop()
+        XCTAssertEqual(result, noErr) 
         XCTAssertFalse(Noise.shared.isPlaying)
     }
     
