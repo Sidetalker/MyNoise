@@ -88,17 +88,6 @@ class Noise: UIResponder {
             return kAudioComponentErr_NotPermitted
         }
         
-        resetNoiseBuffer()
-        
-        defer {
-            isPlaying = true
-            lastTimeToggled = Date().timeIntervalSince1970
-            delegate?.noiseDidStart()
-        }
-        
-        // Already initialized 'er once
-        guard audioUnit == nil else { return noErr }
-        
         log.debug("Preparing audio unit")
         
         var result = prepareAudio()
@@ -132,26 +121,23 @@ class Noise: UIResponder {
     }
 
     @discardableResult private func stop() -> OSStatus {
-        guard let _ = audioUnit, isPlaying else {
+        guard let audioUnit = audioUnit, isPlaying else {
             return kAudioComponentErr_NotPermitted
         }
         
         log.debug("Stopping audio")
         
-//        AudioOutputUnitStop(audioUnit)
-//        AudioUnitUninitialize(audioUnit)
-//        AudioComponentInstanceDispose(audioUnit)
+        AudioOutputUnitStop(audioUnit)
+        AudioUnitUninitialize(audioUnit)
+        AudioComponentInstanceDispose(audioUnit)
+        
+        self.audioUnit = nil
         
         isPlaying = false
         lastTimeToggled = Date().timeIntervalSince1970
         delegate?.noiseDidStop()
         
         return noErr
-    }
-    
-    private func resetNoiseBuffer() {
-        noiseBuffer = type.generator(1000000) // Give 'er a million points
-        noiseBufferOffset = 0
     }
     
     /**
@@ -219,7 +205,7 @@ class Noise: UIResponder {
         
         // Configure audio stream parameters
         var stream = AudioStreamBasicDescription()
-        stream.mSampleRate = 20000 // # samples / second
+        stream.mSampleRate = 44100 // # samples / second
         stream.mFormatID = kAudioFormatLinearPCM
         stream.mFormatFlags = kAudioFormatFlagsNativeFloatPacked | kAudioFormatFlagIsNonInterleaved
         stream.mBytesPerPacket = 4
@@ -273,9 +259,6 @@ class Noise: UIResponder {
     }
 }
 
-public var noiseBuffer = NoisePoints()
-public var noiseBufferOffset = 0
-
 /// Renders noise based on `Noise` state
 public func renderNoise(inRefCon:UnsafeMutableRawPointer,
                         ioActionFlags:UnsafeMutablePointer<AudioUnitRenderActionFlags>,
@@ -286,21 +269,10 @@ public func renderNoise(inRefCon:UnsafeMutableRawPointer,
 {
     guard Noise.shared.isPlaying else { return noErr }
     
-    let pointCount = Int(inNumberFrames)
+    let noise = Noise.generate(count: Int(inNumberFrames))
     let audioListPointer = UnsafeMutableAudioBufferListPointer(ioData)
-    audioListPointer?[0].mDataByteSize = inNumberFrames * uint(MemoryLayout<Float>.size)
-//
-//    var noise: NoisePoints
-//    
-//    if (noiseBufferOffset + pointCount) < noiseBuffer.count {
-//        noise = Array(noiseBuffer[noiseBufferOffset ..< (noiseBufferOffset + pointCount)])
-//        noiseBufferOffset += pointCount
-//    } else {
-//        noise = Array(noiseBuffer.prefix(upTo: pointCount))
-//        noiseBufferOffset = pointCount
-//    }
     
-    let noise = Noise.generate(count: pointCount)
+    audioListPointer?[0].mDataByteSize = inNumberFrames * uint(MemoryLayout<Float>.size)
     audioListPointer?[0].mData = UnsafeMutableRawPointer(mutating: noise)
     
     return noErr
