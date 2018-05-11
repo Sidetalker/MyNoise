@@ -46,7 +46,7 @@ class Noise: UIResponder {
     /// The most recent time Noise was toggled
     private var lastTimeToggled: TimeInterval = Date().timeIntervalSince1970
     
-    public var isPlaying = false
+    private(set) var isPlaying = false
     
     override var canBecomeFirstResponder: Bool { return true }
     

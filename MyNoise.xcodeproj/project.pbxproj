@@ -23,7 +23,6 @@
 		0AAC988A1EA2923D0007B238 /* DropletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC98891EA2923D0007B238 /* DropletView.swift */; };
 		0AAC988C1EA2953A0007B238 /* CogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC988B1EA2953A0007B238 /* CogView.swift */; };
 		0AAC988E1EA2964A0007B238 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC988D1EA2964A0007B238 /* BadgeView.swift */; };
-		0AAC98901EA298510007B238 /* ThemeTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC988F1EA298510007B238 /* ThemeTransitionView.swift */; };
 		0AAC98921EA299020007B238 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC98911EA299020007B238 /* Theme.swift */; };
 		0AAC98941EA2C9CC0007B238 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC98931EA2C9CC0007B238 /* NameView.swift */; };
 		0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */; };
@@ -111,7 +110,6 @@
 		0AAC98891EA2923D0007B238 /* DropletView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropletView.swift; sourceTree = "<group>"; };
 		0AAC988B1EA2953A0007B238 /* CogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CogView.swift; sourceTree = "<group>"; };
 		0AAC988D1EA2964A0007B238 /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
-		0AAC988F1EA298510007B238 /* ThemeTransitionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTransitionView.swift; sourceTree = "<group>"; };
 		0AAC98911EA299020007B238 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0AAC98931EA2C9CC0007B238 /* NameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		0ADF3F381E58C18200143B8C /* MyNoise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNoise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +216,6 @@
 			children = (
 				0A59D55A1E5A027C00404B2C /* Storyboards */,
 				0A59D5591E5A023100404B2C /* View Controllers */,
-				0AAC988F1EA298510007B238 /* ThemeTransitionView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -622,7 +619,6 @@
 				0ADF3F781E5950FA00143B8C /* Globals.swift in Sources */,
 				0ADF3F3E1E58C18200143B8C /* MainViewController.swift in Sources */,
 				0ADF3F741E592C1D00143B8C /* Generators.swift in Sources */,
-				0AAC98901EA298510007B238 /* ThemeTransitionView.swift in Sources */,
 				0ADF3F721E591F1F00143B8C /* Noise.swift in Sources */,
 				0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */,
 			);

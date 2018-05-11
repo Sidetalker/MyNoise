@@ -33,6 +33,7 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
             cog.theme = theme
             themeTitle.theme = theme
             view.backgroundColor = theme.baseColor
+//            view.setNeedsDisplay()
         }
     }
     

@@ -1,96 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BVk-kq-2ny">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="kgJ-NW-jGh">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MyNoise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BVk-kq-2ny" customClass="MainViewController" customModule="MyNoise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="YlP-ZH-WlW"/>
+                        <viewControllerLayoutGuide type="bottom" id="L1x-Vz-gvv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="pIa-UV-Cqj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUd-Pj-xE4" customClass="PlayPauseButton" customModule="NoiseUI">
-                                <rect key="frame" x="157" y="318" width="100" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-QH-tex">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdQ-Mz-svD">
+                                        <rect key="frame" x="87" y="0.0" width="240" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WzM-m0-tSH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-Ci-kgE" customClass="NameView" customModule="NoiseUI">
+                                        <rect key="frame" x="41.333333333333343" y="160.33333333333334" width="331.33333333333326" height="55"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Nkr-Ci-kgE" secondAttribute="height" multiplier="6:1" id="jM4-3W-2J6"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="red"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7r-WL-QFd" customClass="PlayPauseButton" customModule="NoiseUI">
+                                        <rect key="frame" x="157" y="325.66666666666669" width="100" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="h9q-DV-uEI"/>
+                                            <constraint firstAttribute="width" secondItem="W7r-WL-QFd" secondAttribute="height" multiplier="1:1" id="pMq-1F-Fsk"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="play"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-JG-ZGj">
+                                        <rect key="frame" x="142" y="535.66666666666663" width="130" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rw-Mr-rx2" customClass="CogView" customModule="NoiseUI">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="BwQ-mg-keZ"/>
+                                                    <constraint firstAttribute="width" secondItem="8Rw-Mr-rx2" secondAttribute="height" multiplier="1:1" id="yQv-xv-QlS"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMB-MC-dhq" customClass="DropletView" customModule="NoiseUI">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="iMB-MC-dhq" secondAttribute="height" multiplier="1:1" id="Pek-8X-IbF"/>
+                                                    <constraint firstAttribute="width" constant="40" id="SYp-aA-jll"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasBadge" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="badgeScaleFactor">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="iMB-MC-dhq" firstAttribute="width" secondItem="iMB-MC-dhq" secondAttribute="height" multiplier="1:1" id="D6H-8s-WSt"/>
+                                            <constraint firstItem="8Rw-Mr-rx2" firstAttribute="width" secondItem="8Rw-Mr-rx2" secondAttribute="height" multiplier="1:1" id="maI-Zt-AHS"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOh-IP-wb9">
+                                        <rect key="frame" x="87" y="686" width="240" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="N54-Ue-vmj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Kx7-p9-icZ"/>
-                                    <constraint firstAttribute="width" secondItem="sUd-Pj-xE4" secondAttribute="height" multiplier="1:1" id="WXJ-1G-8ta"/>
+                                    <constraint firstItem="Nkr-Ci-kgE" firstAttribute="width" secondItem="JHv-QH-tex" secondAttribute="width" multiplier="0.8" id="jiY-Er-HH8"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="play"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ff-dZ-F6K" customClass="DropletView" customModule="NoiseUI">
-                                <rect key="frame" x="354" y="676" width="40" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="7Ff-dZ-F6K" secondAttribute="height" multiplier="1:1" id="K75-Vh-lxU"/>
-                                    <constraint firstAttribute="width" constant="40" id="Y7F-uH-Ld1"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasBadge" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="badgeScaleFactor">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-Ci-kgE" customClass="NameView" customModule="NoiseUI">
-                                <rect key="frame" x="20" y="681" width="210" height="35"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Xhp-3j-siY"/>
-                                    <constraint firstAttribute="width" secondItem="Nkr-Ci-kgE" secondAttribute="height" multiplier="6:1" id="jM4-3W-2J6"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4L-xb-r7s" customClass="CogView" customModule="NoiseUI">
-                                <rect key="frame" x="20" y="40" width="40" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="N4L-xb-r7s" secondAttribute="height" multiplier="1:1" id="1FP-hV-Qo5"/>
-                                    <constraint firstAttribute="width" constant="40" id="IMB-Pw-pgB"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            </stackView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="Nkr-Ci-kgE" secondAttribute="leading" id="A5N-Vi-4LJ"/>
-                            <constraint firstItem="N4L-xb-r7s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="GLH-ms-eVJ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="N4L-xb-r7s" secondAttribute="leading" id="NIJ-k4-2jv"/>
-                            <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S1d-Sh-3nJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Ff-dZ-F6K" secondAttribute="trailing" id="YW4-jH-jqu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Ff-dZ-F6K" secondAttribute="bottom" constant="20" id="pN8-PV-uO9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nkr-Ci-kgE" secondAttribute="bottom" constant="20" id="sFc-Zv-nsN"/>
-                            <constraint firstItem="sUd-Pj-xE4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yZW-2i-TIS"/>
+                            <constraint firstItem="JHv-QH-tex" firstAttribute="top" secondItem="YlP-ZH-WlW" secondAttribute="bottom" constant="-20" id="4hy-nT-2X4"/>
+                            <constraint firstAttribute="trailing" secondItem="JHv-QH-tex" secondAttribute="trailing" id="95x-EA-ec3"/>
+                            <constraint firstItem="L1x-Vz-gvv" firstAttribute="top" secondItem="JHv-QH-tex" secondAttribute="bottom" id="MyF-ou-QKR"/>
+                            <constraint firstItem="JHv-QH-tex" firstAttribute="leading" secondItem="pIa-UV-Cqj" secondAttribute="leading" id="bNI-Gk-dSI"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cog" destination="N4L-xb-r7s" id="ydh-R6-l1Z"/>
-                        <outlet property="droplet" destination="7Ff-dZ-F6K" id="e3X-RX-gtp"/>
-                        <outlet property="playButton" destination="sUd-Pj-xE4" id="TS4-f1-oim"/>
-                        <outlet property="themeTitle" destination="Nkr-Ci-kgE" id="JYk-W3-7JK"/>
+                        <outlet property="cog" destination="8Rw-Mr-rx2" id="ur7-as-Bzl"/>
+                        <outlet property="droplet" destination="iMB-MC-dhq" id="Bih-0m-Kpj"/>
+                        <outlet property="playButton" destination="W7r-WL-QFd" id="BZf-uM-NB9"/>
+                        <outlet property="themeTitle" destination="Nkr-Ci-kgE" id="Gxa-La-gZD"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5q-Fj-ueT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+            <point key="canvasLocation" x="828.98550724637687" y="33.423913043478265"/>
         </scene>
     </scenes>
 </document>
