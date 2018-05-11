@@ -52,7 +52,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="stateName" value="play"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="red"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-JG-ZGj">
@@ -66,7 +66,7 @@
                                                     <constraint firstAttribute="width" secondItem="8Rw-Mr-rx2" secondAttribute="height" multiplier="1:1" id="yQv-xv-QlS"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="red"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMB-MC-dhq" customClass="DropletView" customModule="NoiseUI">
@@ -77,7 +77,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="SYp-aA-jll"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="green"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="themeString" value="red"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasBadge" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="badgeScaleFactor">
                                                         <real key="value" value="1"/>
@@ -116,11 +116,34 @@
                         <outlet property="droplet" destination="iMB-MC-dhq" id="Bih-0m-Kpj"/>
                         <outlet property="playButton" destination="W7r-WL-QFd" id="BZf-uM-NB9"/>
                         <outlet property="themeTitle" destination="Nkr-Ci-kgE" id="Gxa-La-gZD"/>
+                        <segue destination="m32-lu-7K5" kind="custom" identifier="segueSettings" customClass="SlideTransitionSegue" customModule="MyNoise" customModuleProvider="target" id="LdJ-mX-fLP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5q-Fj-ueT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="828.98550724637687" y="33.423913043478265"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FA9-zp-lBe">
+            <objects>
+                <viewController id="m32-lu-7K5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6F4-DL-4io"/>
+                        <viewControllerLayoutGuide type="bottom" id="aBL-Qq-deK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sAR-cU-nWc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <segue destination="BXC-1w-3xV" kind="unwind" identifier="segueSettingsUnwind" customClass="SlideTransitionSegueUnwind" customModule="MyNoise" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="0g0-W1-OSq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4M-hi-EAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BXC-1w-3xV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="33"/>
         </scene>
     </scenes>
 </document>

@@ -33,7 +33,6 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
             cog.theme = theme
             themeTitle.theme = theme
             view.backgroundColor = theme.baseColor
-//            view.setNeedsDisplay()
         }
     }
     
@@ -77,7 +76,7 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
     }
     
     func cogTapped(cog: CogView) {
-        return
+        performSegue(withIdentifier: "segueSettings", sender: self)
     }
     
     func dropletTapped(droplet: DropletView) {
@@ -89,7 +88,14 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
         themes.insert(nextTheme, at: 0)
         theme = nextTheme
     }
+    
+    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue) {
+        
+    }
 }
 
+extension MainViewController: UIViewControllerTransitioningDelegate {
+    
+}
 
 
