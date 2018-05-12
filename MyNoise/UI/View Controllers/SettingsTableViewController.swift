@@ -40,5 +40,6 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.contentView.backgroundColor = theme.baseColor
+        cell.backgroundColor = theme.baseColor
     }
 }

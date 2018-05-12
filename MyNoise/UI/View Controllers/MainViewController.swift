@@ -40,7 +40,7 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
     
     var themes: [Theme] = [.blue, .red, .green, .yellow, .purple]
     
-    override var prefersStatusBarHidden: Bool { return false }
+    override var prefersStatusBarHidden: Bool { return true }
     override var preferredStatusBarStyle: UIStatusBarStyle { return UIStatusBarStyle.lightContent }
 
     override func viewDidLoad() {

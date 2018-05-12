@@ -23,9 +23,9 @@ class SlideTransitionSegue: UIStoryboardSegue {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         
-        destination.view.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
+        destinationView.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
         
-        window?.insertSubview(destination.view, aboveSubview: source.view)
+        window?.insertSubview(destinationView, aboveSubview: sourceView)
         
         UIView.animate(withDuration: 0.3, animations: {
             sourceView.frame = sourceView.frame.offsetBy(dx: 0, dy: -screenHeight)
