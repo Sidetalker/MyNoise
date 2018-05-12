@@ -128,10 +128,6 @@ class Noise: UIResponder {
         log.debug("Stopping audio")
         
         AudioOutputUnitStop(audioUnit)
-        AudioUnitUninitialize(audioUnit)
-        AudioComponentInstanceDispose(audioUnit)
-        
-        self.audioUnit = nil
         
         isPlaying = false
         lastTimeToggled = Date().timeIntervalSince1970
@@ -157,7 +153,11 @@ class Noise: UIResponder {
      - returns: Status code indicating any error encountered or `noErr` if all is well
     */
     private func prepareAudio() -> OSStatus {
-        audioUnit = nil
+        if audioUnit != nil {
+            AudioUnitUninitialize(audioUnit!)
+            AudioComponentInstanceDispose(audioUnit!)
+            audioUnit = nil
+        }
         
         // Prepare default audio output description for lookup
         var defaultOutputDescription = AudioComponentDescription()

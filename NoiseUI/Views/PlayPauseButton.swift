@@ -26,15 +26,7 @@ public protocol PlayPauseButtonDelegate {
      - parameter button: the PlayPauseButton tapped
      - parameter to: the target state for the animation
     */
-    func playPauseButton(_ button: PlayPauseButton, willChangeState state: PlayPauseButtonState)
-    
-    /**
-     The button has finished an animated state transition
-     
-     - parameter button: the PlayPauseButton that was animated
-     - parameter to: the final state of the button
-     */
-    func playPauseButton(_ button: PlayPauseButton, didChangeState state: PlayPauseButtonState)
+    func playPauseButton(_ button: PlayPauseButton, updatedTo state: PlayPauseButtonState)
 }
 
 /**
@@ -50,8 +42,8 @@ public extension PlayPauseButtonDelegate {
 public class PlayPauseButton: UIControl {
     /// The current state's string representation
     @IBInspectable var stateName: String? {
-        get { return String(describing: currentState) }
-        set { internalState = PlayPauseButtonState(rawValue: newValue ?? "") ?? .play }
+        get { return String(describing: displayState) }
+        set { displayState = PlayPauseButtonState(rawValue: newValue ?? "") ?? .play }
     }
     
     @IBInspectable var themeString: String {
@@ -63,13 +55,10 @@ public class PlayPauseButton: UIControl {
         didSet { setNeedsDisplay() }
     }
     
-    /// The internal state used to draw the button
-    private var internalState: PlayPauseButtonState = .play {
+    /// The state used to draw the button
+    public var displayState: PlayPauseButtonState = .play {
         didSet { setNeedsDisplay() }
     }
-    
-    /// The current state, changed immediately when the button is tapped
-    private(set) var currentState: PlayPauseButtonState = .play
     
     /// Delegate providing button transition events
     public var delegate: PlayPauseButtonDelegate?
@@ -90,7 +79,7 @@ public class PlayPauseButton: UIControl {
     }
     
     override public func draw(_ rect: CGRect) {
-        switch (internalState, theme) {
+        switch (displayState, theme) {
         case (.play, .blue): NoisePaint.drawBluePlay(frame: rect)
         case (.play, .yellow): NoisePaint.drawYellowPlay(frame: rect)
         case (.play, .red): NoisePaint.drawRedPlay(frame: rect)
@@ -104,30 +93,15 @@ public class PlayPauseButton: UIControl {
         }
     }
     
-    public func disable(for interval: TimeInterval) {
-        isEnabled = false
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + interval) {
-            self.isEnabled = true
-        }
-    }
-    
     /**
      Triggered on .touchDown
-     
+      
      - note: `@objc` attribute is needed for private/fileprivate target actions
     */
     @objc private func buttonTapped() {
         guard isEnabled else { return }
         
-        // The publicly visible state will be changed immediately
-        currentState = !currentState
-        
-        delegate?.playPauseButton(self, willChangeState: currentState)
-        
-        // Wow that was fast, all done
-        internalState = currentState
-        
-        delegate?.playPauseButton(self, didChangeState: internalState)
+        displayState = !displayState
+        delegate?.playPauseButton(self, updatedTo: displayState)
     }
 }

@@ -28,6 +28,8 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
     
     var theme: Theme = .blue {
         didSet {
+            ThemeManager.shared.theme = theme
+            
             playButton.theme = theme
             droplet.theme = theme
             cog.theme = theme
@@ -38,7 +40,8 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
     
     var themes: [Theme] = [.blue, .red, .green, .yellow, .purple]
     
-    override var prefersStatusBarHidden: Bool { return true }
+    override var prefersStatusBarHidden: Bool { return false }
+    override var preferredStatusBarStyle: UIStatusBarStyle { return UIStatusBarStyle.lightContent }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,26 +52,20 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
         
         commandCenter.playCommand.isEnabled = true
         commandCenter.playCommand.addTarget { remoteEvent in
-            guard !Noise.shared.isPlaying && self.playButton.isEnabled else {
-                return .commandFailed
-            }
-            
+            self.playButton.displayState = .pause
             Noise.start()
             return .success
         }
         
         commandCenter.pauseCommand.isEnabled = true
         commandCenter.pauseCommand.addTarget { remoteEvent in
-            guard Noise.shared.isPlaying && self.playButton.isEnabled else {
-                return .commandFailed
-            }
-            
+            self.playButton.displayState = .play
             Noise.stop()
             return .success
         }
     }
     
-    func playPauseButton(_ button: PlayPauseButton, willChangeState state: PlayPauseButtonState) {
+    func playPauseButton(_ button: PlayPauseButton, updatedTo state: PlayPauseButtonState) {
         switch state {
         case .play: Noise.stop()
         case .pause: Noise.start()
@@ -92,10 +89,6 @@ class MainViewController: UIViewController, PlayPauseButtonDelegate, DropletDele
     @IBAction func returnFromSegueActions(sender: UIStoryboardSegue) {
         
     }
-}
-
-extension MainViewController: UIViewControllerTransitioningDelegate {
-    
 }
 
 

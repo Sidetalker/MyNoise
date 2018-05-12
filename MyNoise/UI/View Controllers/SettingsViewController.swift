@@ -9,27 +9,37 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var lblHeader: UILabel!
+    @IBOutlet weak var btnSave: UIButton!
+    
+    var settingsTableVC: SettingsTableViewController?
+    
+    var theme = ThemeManager.shared.theme
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        lblHeader.textColor = theme.accentColor
+        view.backgroundColor = theme.baseColor
+        btnSave.setTitleColor(theme.accentColor, for: .normal)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "segueEmbedSettings" {
+//            settingsTableVC = segue.destination as? SettingsTableViewController
+//            settingsTableVC
+//        }
+//    }
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        performSegue(withIdentifier: "segueSettingsUnwind", sender: self)
     }
-    */
-
+    
+    @IBAction func startOnLaunchToggled(_ sender: Any) {
+    }
+    
+    @IBAction func noiseTypeSelected(_ sender: Any) {
+    }
+    
 }

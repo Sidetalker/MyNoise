@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2906AC20A665C000634DBD /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2906AB20A665C000634DBD /* ThemeManager.swift */; };
+		0A2906AE20A77D9300634DBD /* Handwritten.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A2906AD20A77D9200634DBD /* Handwritten.ttf */; };
+		0A2906B120A784EC00634DBD /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2906B020A784EC00634DBD /* SettingsTableViewController.swift */; };
 		0A56213F1E5A3647005E3E92 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */; };
 		0A5621401E5A3647005E3E92 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A59D5961E5A22D700404B2C /* NoiseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A59D58D1E5A22D700404B2C /* NoiseUI.framework */; };
@@ -96,6 +99,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A2906AB20A665C000634DBD /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		0A2906AD20A77D9200634DBD /* Handwritten.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handwritten.ttf; sourceTree = "<group>"; };
+		0A2906B020A784EC00634DBD /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		0A56213E1E5A3647005E3E92 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		0A59D55C1E5A02AD00404B2C /* PlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 		0A59D5841E5A08B300404B2C /* NoisePaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoisePaint.swift; sourceTree = "<group>"; };
@@ -201,8 +207,9 @@
 		0A59D5591E5A023100404B2C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A9DB1CB20A63C9D0016BBBC /* SettingsViewController.swift */,
 				0ADF3F3D1E58C18200143B8C /* MainViewController.swift */,
+				0A9DB1CB20A63C9D0016BBBC /* SettingsViewController.swift */,
+				0A2906B020A784EC00634DBD /* SettingsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -220,8 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				0AFDDC6020A63FAF005D6F79 /* CustomSegues.swift */,
-				0A59D55A1E5A027C00404B2C /* Storyboards */,
+				0A2906AB20A665C000634DBD /* ThemeManager.swift */,
 				0A59D5591E5A023100404B2C /* View Controllers */,
+				0A59D55A1E5A027C00404B2C /* Storyboards */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -262,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				0ADF3F3B1E58C18200143B8C /* AppDelegate.swift */,
+				0ADF3F421E58C18200143B8C /* Assets.xcassets */,
+				0A2906AD20A77D9200634DBD /* Handwritten.ttf */,
 				0ADF3F471E58C18200143B8C /* Info.plist */,
 			);
 			path = Resources;
@@ -308,7 +318,6 @@
 				0A59D5581E5A022500404B2C /* Helpers */,
 				0A59D5AB1E5A230300404B2C /* Resources */,
 				0A59D55B1E5A028C00404B2C /* UI */,
-				0ADF3F421E58C18200143B8C /* Assets.xcassets */,
 			);
 			path = MyNoise;
 			sourceTree = "<group>";
@@ -543,6 +552,7 @@
 				0ADF3F461E58C18200143B8C /* LaunchScreen.storyboard in Resources */,
 				0ADF3F431E58C18200143B8C /* Assets.xcassets in Resources */,
 				0ADF3F411E58C18200143B8C /* Main.storyboard in Resources */,
+				0A2906AE20A77D9300634DBD /* Handwritten.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,8 +637,10 @@
 				0ADF3F741E592C1D00143B8C /* Generators.swift in Sources */,
 				0ADF3F721E591F1F00143B8C /* Noise.swift in Sources */,
 				0AFDDC6120A63FAF005D6F79 /* CustomSegues.swift in Sources */,
+				0A2906AC20A665C000634DBD /* ThemeManager.swift in Sources */,
 				0ADF3F3C1E58C18200143B8C /* AppDelegate.swift in Sources */,
 				0A9DB1CC20A63C9D0016BBBC /* SettingsViewController.swift in Sources */,
+				0A2906B120A784EC00634DBD /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +912,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyNoise/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -920,6 +933,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyNoise/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sideapps.MyNoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
